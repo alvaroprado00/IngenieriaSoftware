@@ -14,9 +14,10 @@ public class Pala {
     private int manejabilidad;
     private int puntoDulce;
     private int total;
-    private float precio;
+    private double precio;
+    private javax.swing.ImageIcon foto;
 
-    public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,float precio){
+    public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, javax.swing.ImageIcon foto){
         this.nombre=nombre;
         this.forma=forma;
         setPotencia(potencia);
@@ -27,6 +28,7 @@ public class Pala {
         if(precio > 0)
             this.precio=precio;
         this.total = (potencia + control + salida + manejabilidad + puntoDulce)/5;
+        this.foto = foto;
     }
 
     public void setPotencia(int potencia){
@@ -86,8 +88,12 @@ public class Pala {
         return total;
     }
 
-    public float getPrecio() {
+    public double getPrecio() {
         return precio;
+    }
+
+    public javax.swing.ImageIcon getFoto(){
+        return foto;
     }
 
 }
