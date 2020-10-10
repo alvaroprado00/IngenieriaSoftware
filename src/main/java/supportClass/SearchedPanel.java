@@ -1,22 +1,33 @@
 package supportClass;
 
+import model.Pala;
+import view.JPala;
 import view.imagePanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class SearchedPanel extends JPanel {
+    private JPanel panelImage;
+    private JLabel labelName;
+    private Pala pala = new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20,imagePanel.createImageIcon("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala"));//esto es para la pala de la primera entrega tener una default que muestre
 
-    public SearchedPanel(String nombre, String rutaFoto) {
+    public SearchedPanel(Pala pala) {
 
+        this.pala = pala;
         this.setLayout(new BorderLayout());
 
-        JPanel imagen = new imagePanel(rutaFoto,"");
-        JLabel titulo = new JLabel(nombre);
+        panelImage = new imagePanel(pala.getFoto());
+        labelName = new JLabel(pala.getNombre());
 
-        this.add(imagen, BorderLayout.NORTH);
-        this.add(titulo, BorderLayout.SOUTH);
+        //this.add(panelImage, BorderLayout.NORTH);
+        this.add(labelName, BorderLayout.SOUTH);
         this.setVisible(true);
+
+        initFunciones();
     }
 
     /**
@@ -26,25 +37,44 @@ public class SearchedPanel extends JPanel {
 
         this.setLayout(new BorderLayout());
 
-        JPanel imagen = new imagePanel("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala");
-        JLabel titulo = new JLabel("Royal Whip 2017");
+        panelImage = new imagePanel("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala");
+        labelName = new JLabel("Royal Whip 2017");
 
-        titulo.setFont(new Font("Arial",0,10));
-        titulo.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        labelName.setFont(new Font("Arial",0,10));
+        labelName.setHorizontalAlignment((int) CENTER_ALIGNMENT);
 
-        imagen.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.9)));
-        titulo.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.1)));
+        panelImage.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.9)));
+        labelName.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.1)));
 
         this.setPreferredSize(new Dimension(150,150));
-        this.add(imagen, BorderLayout.CENTER);
-        this.add(titulo, BorderLayout.SOUTH);
+        this.add(panelImage, BorderLayout.CENTER);
+        this.add(labelName, BorderLayout.SOUTH);
         this.setVisible(true);
+
+        initFunciones();
+    }
+
+    private void initFunciones() {
+
+        MouseListener ml  = new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new JPala(pala);
+            }
+        };
+
+
+        panelImage.addMouseListener(ml);
+        labelName.addMouseListener(ml);
+
     }
 
     public static void main(String[] args){
-        JFrame prueba= new JFrame();
+        /*JFrame prueba= new JFrame();
         prueba.add(new SearchedPanel());
         prueba.setSize(new Dimension(300,300));
-        prueba.setVisible(true);
+        prueba.setVisible(true);*/
+        JPala a = new JPala(new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20,imagePanel.createImageIcon("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala")));
+        a.setVisible(true);
     }
 }

@@ -25,6 +25,10 @@ public class imagePanel extends JPanel {
         }
     }
 
+    public imagePanel(ImageIcon icono){
+        imagen = icono.getImage();
+    }
+
     @Override
     public void paint(Graphics g) {
         if (imagen != null) {
@@ -45,7 +49,7 @@ public class imagePanel extends JPanel {
      * @param description descripciod de la iamgen
      * @return devuelve un ImageIcon de la imagen que se encuentra en el path indicado
      */
-    protected static ImageIcon createImageIcon(String path,
+    public static ImageIcon createImageIcon(String path,
                                                String description) {
         java.net.URL imgURL = userValidationUI.class.getResource(path);
 
