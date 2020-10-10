@@ -10,3 +10,5 @@ target/classes/view/Headline.class
 target/classes/view/imagePanel.class
 *.class
 *.class
+*.class
+*.class

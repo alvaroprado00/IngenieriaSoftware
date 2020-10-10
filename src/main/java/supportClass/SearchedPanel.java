@@ -36,7 +36,6 @@ public class SearchedPanel extends JPanel {
     public SearchedPanel() {
 
         this.setLayout(new BorderLayout());
-
         panelImage = new imagePanel("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala");
         labelName = new JLabel("Royal Whip 2017");
 

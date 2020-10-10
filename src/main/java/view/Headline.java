@@ -34,7 +34,7 @@ public class Headline extends javax.swing.JPanel {
         panelLogo = new imagePanel("/images/icon.png", "Logo");
         panelBuscar = new JPanel();
         txtBuscar = new JTextField();
-        pnlLupa = new imagePanel("/images/loupe.png", "Lupa");
+        pnlLupa = new imagePanel("/images/lupa.png", "Lupa");
         lblContacto = new JLabel();
 
         setPreferredSize(new Dimension(500, 50));
