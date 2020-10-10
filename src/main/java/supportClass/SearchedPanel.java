@@ -59,7 +59,8 @@ public class SearchedPanel extends JPanel {
         MouseListener ml  = new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                new JPala(pala);
+                JPala a = new JPala(pala);
+                a.setVisible(true);
             }
         };
 
