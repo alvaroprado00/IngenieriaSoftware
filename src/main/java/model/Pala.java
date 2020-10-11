@@ -38,6 +38,20 @@ public class Pala {
         this.foto= ImagePanel.createImageIcon(ficheroFoto.getPath(),nombre);
     }
 
+    public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, String ruta){
+        this.nombre=nombre;
+        this.forma=forma;
+        this.potencia=potencia;
+        this.control=control;
+        this.salida=salida;
+        this.manejabilidad=manejabilidad;
+        this.puntoDulce=puntoDulce;
+        if(precio > 0)
+            this.precio=precio;
+        this.total = (potencia + control + salida + manejabilidad + puntoDulce)/5;
+        this.foto= ImagePanel.createImageIcon(ruta,nombre);
+    }
+
     public void setPotencia(int potencia){
         if(potencia >= 0 && potencia <= 100)
             this.potencia=potencia;

@@ -14,7 +14,7 @@ import java.io.File;
 public class SearchedPanel extends JPanel {
     private JPanel panelImage;
     private JLabel labelName;
-    private Pala pala = new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20,new File("/images/Royal-Padel-Whip-Polietileno-2017.png"));//esto es para la pala de la primera entrega tener una default que muestre
+    private Pala pala = new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20,"/images/Royal-Padel-Whip-Polietileno-2017.png");//esto es para la pala de la primera entrega tener una default que muestre
 
     public SearchedPanel(Pala pala) {
 

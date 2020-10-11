@@ -312,6 +312,8 @@ public class FilterWindow extends javax.swing.JFrame {
 
         scrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
+        panelResultsLayout.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
         /*javax.swing.GroupLayout PanelResultadosLayout = new javax.swing.GroupLayout(panelResultsLayout);
         panelResultsLayout.setLayout(PanelResultadosLayout);
         PanelResultadosLayout.setHorizontalGroup(
@@ -334,7 +336,7 @@ public class FilterWindow extends javax.swing.JFrame {
                         .addGap(0, 50, Short.MAX_VALUE));*/  //esto al parecer solo hacia que no me dejase mostrar el encxabezado
         panelResultsHolder.setLayout(new java.awt.GridLayout(0, 4));
         panelResultsLayout.add(panelResultsHolder);
-        panelResultsLayout.setLayout(new java.awt.FlowLayout((int) LEFT_ALIGNMENT));
+
         scrollPane1.setViewportView(panelResultsLayout);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
