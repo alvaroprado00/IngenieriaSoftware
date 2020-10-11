@@ -50,7 +50,7 @@ public class ImagePanel extends JPanel {
      */
     public static ImageIcon createImageIcon(String path,
                                                String description) {
-        java.net.URL imgURL = UserValidationUI.class.getResource(path);
+        java.net.URL imgURL = view.UserValidationUI.class.getResource(path);
 
         if (imgURL != null) {
             return new ImageIcon(imgURL, description);

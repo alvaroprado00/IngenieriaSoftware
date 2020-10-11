@@ -6,6 +6,8 @@ package view;
  * and open the template in the editor.
  */
 
+import java.awt.event.MouseEvent;
+
 /**
  *
  * @author Jaime

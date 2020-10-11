@@ -4,6 +4,7 @@ package view;/*
  * and open the template in the editor.
  */
 
+import javax.swing.*;
 import java.awt.event.*;
 
 /**
@@ -13,7 +14,7 @@ import java.awt.event.*;
 public class Headline extends javax.swing.JPanel {
 
     /**
-     * Creates new form Cabecera
+     * Creates new form Headline
      */
     public Headline() {
         initComponents();
@@ -34,6 +35,26 @@ public class Headline extends javax.swing.JPanel {
         pnlLoupe = new ImagePanel("/images/loupe.png", "Lupa");
         lblContact = new javax.swing.JLabel();
         pnlUser = new ImagePanel("/images/user.png", "Palas");
+
+        pnlUser.setVisible(true);
+        pnlUser.addMouseListener(new MouseListener() {
+
+            //Tenemos que indicar todos los metodos aunque no añadamos funcionalidad
+
+            public void mouseClicked(MouseEvent evt) {
+                new UserValidationUI();
+            }
+            public void mousePressed(MouseEvent evt){
+            }
+            public void mouseReleased(MouseEvent evt){
+
+            }
+            public void mouseEntered(MouseEvent evt){
+            }
+            public void mouseExited(MouseEvent evt){
+            }
+
+        });
 
         setPreferredSize(new java.awt.Dimension(560, 50));
 
