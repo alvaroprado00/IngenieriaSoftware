@@ -62,7 +62,7 @@ public class FilterWindow extends javax.swing.JFrame {
         scrollPane1 = new javax.swing.JScrollPane();
         panelResultsLayout = new javax.swing.JPanel();
         panelResultsHolder = new JPanel();
-        headline = new Headline();
+        headline1 = new Headline();
 
         //para primera entrega
         panelResultsHolder.setSize(panelResultsLayout.getWidth(), panelResultsHolder.getHeight());
@@ -73,7 +73,6 @@ public class FilterWindow extends javax.swing.JFrame {
         }
         cargarPaneles(paneles);
         //hasta aqui
-
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -212,8 +211,6 @@ public class FilterWindow extends javax.swing.JFrame {
             }
         });
 
-        headline.setVisible(true);
-
         javax.swing.GroupLayout panelFiltrosLayout = new javax.swing.GroupLayout(panelFiltros);
         panelFiltros.setLayout(panelFiltrosLayout);
         panelFiltrosLayout.setHorizontalGroup(
@@ -323,14 +320,14 @@ public class FilterWindow extends javax.swing.JFrame {
                         .addGap(0, 571, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout headlineLayout = new javax.swing.GroupLayout(headline);
-        headline.setLayout(headlineLayout);
-        headlineLayout.setHorizontalGroup(
-            headlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlHeadlineLayout = new javax.swing.GroupLayout(headline1);
+        headline1.setLayout(pnlHeadlineLayout);
+        pnlHeadlineLayout.setHorizontalGroup(
+            pnlHeadlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        headlineLayout.setVerticalGroup(
-                headlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlHeadlineLayout.setVerticalGroup(
+                pnlHeadlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGap(0, 50, Short.MAX_VALUE));
         panelResultsHolder.setLayout(new java.awt.GridLayout(0, 4));
         panelResultsLayout.setLayout(new java.awt.FlowLayout((int) LEFT_ALIGNMENT));
@@ -339,23 +336,22 @@ public class FilterWindow extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addComponent(panelFiltros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE))
-                        .addComponent(headline, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                  );
-        layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(headline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(scrollPane1)
-                                        .addComponent(panelFiltros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelFiltros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE))
+            .addComponent(headline1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        this.setMaximumSize(new Dimension(this.getWidth(),1000000000));
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(headline1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollPane1)
+                    .addComponent(panelFiltros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
 
 
         sliderPotencia.addChangeListener(new ChangeListener() {
@@ -542,7 +538,7 @@ public class FilterWindow extends javax.swing.JFrame {
     private javax.swing.JCheckBox boxPalaShape2;
     private javax.swing.JCheckBox boxPalaShape3;
     private javax.swing.JPanel panelResultsLayout;
-    private Headline headline;
+    private Headline headline1;
     private javax.swing.JScrollPane scrollPane1;
     private javax.swing.JSlider sliderPotencia;
     private javax.swing.JSlider sliderControl;
