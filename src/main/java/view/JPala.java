@@ -30,6 +30,10 @@ public class JPala extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
+        this.setTitle("Pala seleccionada");
+
+        this.setIconImage(new ImagePanel("/images/icon.png", "icono para ventana de pala concreta").getImageFromPanel());
+
         pnlSuperior = new javax.swing.JPanel();
         btnDummy = new javax.swing.JButton();
         lblFoto = new javax.swing.JLabel();

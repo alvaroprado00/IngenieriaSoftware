@@ -5,14 +5,14 @@ package model;
  *
  * @author Alvaro Prado
  */
-public class user {
+public class User {
 
     //Attributes
 
     private int userID; //identificador unico de 8 digitos
     private String password;
 
-    public user(int userID, String password){
+    public User(int userID, String password){
 
         this.userID=userID;
         this.password=password;
@@ -44,9 +44,9 @@ public class user {
     @Override
     public boolean equals(Object o) {
 
-        if (o instanceof user) {
+        if (o instanceof User) {
             //downcasting
-            user u=(user)o;
+            User u=(User)o;
 
             if(u.getID()==this.getID() && u.getPassword().equals(this.getPassword())) {
                 return true;

@@ -1,6 +1,6 @@
 package controller;
 
-import model.user;
+import model.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
  *  @author Alvaro Prado
  */
 
-public class userIO {
+public class UserIO {
 
     //Constants
 
@@ -22,15 +22,15 @@ public class userIO {
 
     //Atributes
 
-    ArrayList<user> registeredUsers;
+    ArrayList<User> registeredUsers;
 
-    public userIO() {
+    public UserIO() {
         registeredUsers = new ArrayList<>();
     }
 
     //Methods
 
-    public ArrayList<user> getRegisteredUsers() {
+    public ArrayList<User> getRegisteredUsers() {
 
         BufferedReader br = null;
 
@@ -50,7 +50,7 @@ public class userIO {
                     int userID= Integer.parseInt(fields[0].trim());
                     String userPassword= fields[1].trim();
 
-                    registeredUsers.add(new user(userID, userPassword));
+                    registeredUsers.add(new User(userID, userPassword));
 
                 }catch (NumberFormatException nfe){
 

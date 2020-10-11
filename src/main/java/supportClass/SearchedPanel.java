@@ -2,7 +2,7 @@ package supportClass;
 
 import model.Pala;
 import view.JPala;
-import view.imagePanel;
+import view.ImagePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,14 +13,14 @@ import java.awt.event.MouseListener;
 public class SearchedPanel extends JPanel {
     private JPanel panelImage;
     private JLabel labelName;
-    private Pala pala = new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20,imagePanel.createImageIcon("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala"));//esto es para la pala de la primera entrega tener una default que muestre
+    private Pala pala = new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20, ImagePanel.createImageIcon("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala"));//esto es para la pala de la primera entrega tener una default que muestre
 
     public SearchedPanel(Pala pala) {
 
         this.pala = pala;
         this.setLayout(new BorderLayout());
 
-        panelImage = new imagePanel(pala.getFoto());
+        panelImage = new ImagePanel(pala.getFoto());
         labelName = new JLabel(pala.getNombre());
 
         //this.add(panelImage, BorderLayout.NORTH);
@@ -36,7 +36,7 @@ public class SearchedPanel extends JPanel {
     public SearchedPanel() {
 
         this.setLayout(new BorderLayout());
-        panelImage = new imagePanel("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala");
+        panelImage = new ImagePanel("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala");
         labelName = new JLabel("Royal Whip 2017");
 
         labelName.setFont(new Font("Arial",0,10));
@@ -74,7 +74,7 @@ public class SearchedPanel extends JPanel {
         prueba.add(new SearchedPanel());
         prueba.setSize(new Dimension(300,300));
         prueba.setVisible(true);*/
-        JPala a = new JPala(new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20,imagePanel.createImageIcon("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala")));
+        JPala a = new JPala(new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20, ImagePanel.createImageIcon("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala")));
         a.setVisible(true);
     }
 }

@@ -28,7 +28,11 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        pnlPalas = new imagePanel("/images/palas.jpg", "Pala");
+        //Pongo titulo a la ventana
+
+        this.setTitle("Ventana principal");
+
+        pnlPalas = new ImagePanel("/images/palas.jpg", "Pala");
         pnlOverview = new javax.swing.JScrollPane();
         txtOverview = new javax.swing.JTextArea();
         lblTitle = new javax.swing.JLabel();
@@ -53,14 +57,14 @@ public class Principal extends javax.swing.JFrame {
         txtOverview.setEditable(false);
         txtOverview.setBackground(new java.awt.Color(240, 240, 240, 0));
         txtOverview.setColumns(20);
-        txtOverview.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtOverview.setFont(new java.awt.Font("Cooper", 0, 12)); // NOI18N
         txtOverview.setRows(5);
         txtOverview.setText("No gastes más de lo que necesitas, nos aseguramos de \nque el dinero que estés dispuesto a invertir vaya dirigido a \nencontrar tu pala de pádel ideal. Todo ello en base a \nlas características que busques.");
         txtOverview.setBorder(null);
         pnlOverview.setViewportView(txtOverview);
 
-        lblTitle.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        lblTitle.setForeground(new java.awt.Color(51, 0, 255));
+        lblTitle.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 153, 255));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Encuentra tu pala de pádel");
 
@@ -104,7 +108,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         pack();
-        this.setIconImage(new imagePanel("/images/icon.png", "icono de la ventana").getImageFromPanel());
+        this.setIconImage(new ImagePanel("/images/icon.png", "icono de la ventana").getImageFromPanel());
         this.setLocationRelativeTo(null);
     }// </editor-fold>
 
@@ -119,7 +123,7 @@ public class Principal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

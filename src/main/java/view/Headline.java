@@ -28,12 +28,12 @@ public class Headline extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        panelLogo = new imagePanel("/images/icon.png", "Logo");
+        panelLogo = new ImagePanel("/images/icon.png", "Logo");
         pnlSearch = new javax.swing.JPanel();
         txtSearch = new javax.swing.JTextField();
-        pnlLoupe = new imagePanel("/images/loupe.png", "Lupa");
+        pnlLoupe = new ImagePanel("/images/loupe.png", "Lupa");
         lblContact = new javax.swing.JLabel();
-        pnlUser = new imagePanel("/images/user.png", "Palas");
+        pnlUser = new ImagePanel("/images/user.png", "Palas");
 
         setPreferredSize(new java.awt.Dimension(560, 50));
 

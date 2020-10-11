@@ -2,14 +2,13 @@ package view;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
  * Clase para crear un panel relleno con una imagen
  */
-public class imagePanel extends JPanel {
+public class ImagePanel extends JPanel {
 
     public Image imagen;
 
@@ -18,14 +17,14 @@ public class imagePanel extends JPanel {
      * @param imageName path donde se encuentra la imagen
      * @param description descripcion de la imagen
      */
-    public imagePanel(String imageName, String description) {
+    public ImagePanel(String imageName, String description) {
         if (imageName != null) {
 
             imagen = createImageIcon(imageName, description).getImage();
         }
     }
 
-    public imagePanel(ImageIcon icono){
+    public ImagePanel(ImageIcon icono){
         imagen = icono.getImage();
     }
 
@@ -51,7 +50,7 @@ public class imagePanel extends JPanel {
      */
     public static ImageIcon createImageIcon(String path,
                                                String description) {
-        java.net.URL imgURL = userValidationUI.class.getResource(path);
+        java.net.URL imgURL = UserValidationUI.class.getResource(path);
 
         if (imgURL != null) {
             return new ImageIcon(imgURL, description);

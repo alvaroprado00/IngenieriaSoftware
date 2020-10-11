@@ -1,6 +1,6 @@
 package view;
 
-import controller.userController;
+import controller.UserController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,12 +14,12 @@ import java.awt.event.MouseListener;
  * La ventana ha sido creada en NetBeans y se le ha añadido funcionalidad en intellij IDEA.
  * @author Alvaro Prado
  */
-public class userValidationUI extends javax.swing.JFrame {
+public class UserValidationUI extends javax.swing.JFrame {
 
     /**
      * Creates new form userValidation
      */
-    public userValidationUI() {
+    public UserValidationUI() {
         initComponents();
     }
 
@@ -42,7 +42,7 @@ public class userValidationUI extends javax.swing.JFrame {
         imagePanel = new JPanel();
         txtMensaje = new JTextField();
 
-        imagePanel= new imagePanel("/images/userValidation.jpg", "Image for user validations");
+        imagePanel= new ImagePanel("/images/userValidation.jpg", "Image for user validations");
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -166,13 +166,13 @@ public class userValidationUI extends javax.swing.JFrame {
                                 .addGap(26, 26, 26))
         );
         pack();
-        this.setIconImage(new imagePanel("/images/icon.png", "icono de la ventana").getImageFromPanel());
+        this.setIconImage(new ImagePanel("/images/icon.png", "icono de la ventana").getImageFromPanel());
         this.setTitle("Validation page");
         this.setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnValidateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidateActionPerformed
-        userController uc= new userController();
+        UserController uc= new UserController();
         boolean identified= uc.identifyUser(Integer.parseInt(txtUser.getText()), String.valueOf(txtPassword.getPassword()));
 
         if(identified){
@@ -218,13 +218,13 @@ public class userValidationUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(userValidationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserValidationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(userValidationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserValidationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(userValidationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserValidationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(userValidationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserValidationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -232,7 +232,7 @@ public class userValidationUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new userValidationUI().setVisible(true);
+                new UserValidationUI().setVisible(true);
             }
         });
     }

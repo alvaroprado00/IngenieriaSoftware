@@ -2,6 +2,11 @@ package view;
 
 import javax.swing.*;
 
+/**
+ * Author: Jaime Mohedano
+ *
+ * Ventana con la cabecera que deben de llevar todas las ventanas
+ */
 public class jVentana {
     public static void main(String argv[])
     {

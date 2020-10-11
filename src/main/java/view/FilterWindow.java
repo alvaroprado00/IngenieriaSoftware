@@ -37,6 +37,10 @@ public class FilterWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
+        this.setTitle("Ventana de filtrado");
+
+        this.setIconImage(new ImagePanel("/images/icon.png", "icono para ventana de pala concreta").getImageFromPanel());
+
         panelFiltros = new javax.swing.JPanel();
         sliderPotencia = new javax.swing.JSlider();
         labelFiltro = new java.awt.Label();

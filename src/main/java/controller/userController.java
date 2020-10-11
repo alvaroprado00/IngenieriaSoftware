@@ -1,6 +1,6 @@
 package controller;
 
-import model.user;
+import model.User;
 
 import java.util.ArrayList;
 
@@ -9,18 +9,18 @@ import java.util.ArrayList;
  *
  * @author Alvaro Prado
  */
-public class userController {
+public class UserController {
 
     //Attributes
 
-    public ArrayList<user> registeredUsers;
-    public userIO userReader;
+    public ArrayList<User> registeredUsers;
+    public UserIO userReader;
 
     //Constructor
 
-    public userController(){
+    public UserController(){
         registeredUsers= new ArrayList<>();
-        userReader=new userIO();
+        userReader=new UserIO();
         this.getRegisteredUsers();
     }
 
@@ -28,7 +28,7 @@ public class userController {
 
         //We create an instance of user with the info
 
-        user userToValidate= new user(userID, password);
+        User userToValidate= new User(userID, password);
 
         if(registeredUsers.contains(userToValidate)){
 
