@@ -37,23 +37,11 @@ public class Headline extends javax.swing.JPanel {
         pnlUser = new ImagePanel("/images/user.png", "Palas");
 
         pnlUser.setVisible(true);
-        pnlUser.addMouseListener(new MouseListener() {
-
-            //Tenemos que indicar todos los metodos aunque no añadamos funcionalidad
+        pnlUser.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent evt) {
                 new UserValidationUI();
             }
-            public void mousePressed(MouseEvent evt){
-            }
-            public void mouseReleased(MouseEvent evt){
-
-            }
-            public void mouseEntered(MouseEvent evt){
-            }
-            public void mouseExited(MouseEvent evt){
-            }
-
         });
 
         setPreferredSize(new java.awt.Dimension(560, 50));

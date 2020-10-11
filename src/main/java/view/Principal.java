@@ -39,7 +39,7 @@ public class Principal extends javax.swing.JFrame {
         txtOverview = new javax.swing.JTextArea();
         lblTitle = new javax.swing.JLabel();
         pnlHeadline = new javax.swing.JPanel();
-        headline1 = new Headline();
+        headline = new Headline();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,12 +75,12 @@ public class Principal extends javax.swing.JFrame {
         pnlHeadlineLayout.setHorizontalGroup(
                 pnlHeadlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(pnlHeadlineLayout.createSequentialGroup()
-                                .addComponent(headline1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(headline, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlHeadlineLayout.setVerticalGroup(
                 pnlHeadlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(headline1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(headline, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,7 +150,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify
-    private Headline headline1;
+    private Headline headline;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel pnlHeadline;
     private javax.swing.JScrollPane pnlOverview;
