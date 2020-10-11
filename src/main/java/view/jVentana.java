@@ -10,7 +10,6 @@ public class jVentana {
 
         JPanel pnl = new Headline();
         jFrame.add(pnl);
-        jFrame.setTitle("Hola");
         jFrame.pack();
         jFrame.setVisible(true);
     }

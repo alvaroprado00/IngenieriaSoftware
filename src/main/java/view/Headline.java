@@ -1,13 +1,17 @@
-package view;/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package view;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
@@ -32,44 +36,62 @@ public class Headline extends javax.swing.JPanel {
     private void initComponents() {
 
         panelLogo = new imagePanel("/images/icon.png", "Logo");
-        panelBuscar = new JPanel();
-        txtBuscar = new JTextField();
+        panelBuscar = new javax.swing.JPanel();
+        txtBuscar = new javax.swing.JTextField();
         pnlLupa = new imagePanel("/images/lupa.png", "Lupa");
-        lblContacto = new JLabel();
+        lblContacto = new javax.swing.JLabel();
 
-        setPreferredSize(new Dimension(500, 50));
+        setPreferredSize(new java.awt.Dimension(500, 50));
 
-        panelLogo.setPreferredSize(new Dimension(82, 50));
+        panelLogo.setPreferredSize(new java.awt.Dimension(82, 50));
 
-        GroupLayout panelLogoLayout = new GroupLayout(panelLogo);
+        javax.swing.GroupLayout panelLogoLayout = new javax.swing.GroupLayout(panelLogo);
         panelLogo.setLayout(panelLogoLayout);
         panelLogoLayout.setHorizontalGroup(
-            panelLogoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGap(0, 49, Short.MAX_VALUE)
+                panelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 49, Short.MAX_VALUE)
         );
         panelLogoLayout.setVerticalGroup(
-            panelLogoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+                panelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 42, Short.MAX_VALUE)
         );
 
         txtBuscar.setText("Buscar pala");
-        txtBuscar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarActionPerformed(evt);
             }
         });
+        txtBuscar.addMouseListener(new MouseListener() {
 
-        pnlLupa.setPreferredSize(new Dimension(100, 50));
+            //Tenemos que indicar todos los metodos aunque no añadamos funcionalidad
 
-        GroupLayout pnlLupaLayout = new GroupLayout(pnlLupa);
+            public void mouseClicked(MouseEvent evt) {
+                txtBuscarMouseClicked(evt);
+            }
+
+            public void mousePressed(MouseEvent evt){
+            }
+            public void mouseReleased(MouseEvent evt){
+            }
+            public void mouseEntered(MouseEvent evt){
+            }
+            public void mouseExited(MouseEvent evt){
+            }
+
+        });
+
+        pnlLupa.setPreferredSize(new java.awt.Dimension(100, 50));
+
+        javax.swing.GroupLayout pnlLupaLayout = new javax.swing.GroupLayout(pnlLupa);
         pnlLupa.setLayout(pnlLupaLayout);
         pnlLupaLayout.setHorizontalGroup(
-            pnlLupaLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGap(0, 23, Short.MAX_VALUE)
+                pnlLupaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 23, Short.MAX_VALUE)
         );
         pnlLupaLayout.setVerticalGroup(
-            pnlLupaLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
+                pnlLupaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 20, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout panelBuscarLayout = new javax.swing.GroupLayout(panelBuscar);
@@ -77,58 +99,69 @@ public class Headline extends javax.swing.JPanel {
         panelBuscarLayout.setHorizontalGroup(
                 panelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBuscarLayout.createSequentialGroup()
-                                .addContainerGap()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(pnlLupa, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(35, Short.MAX_VALUE))
+                                .addContainerGap())
         );
         panelBuscarLayout.setVerticalGroup(
                 panelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelBuscarLayout.createSequentialGroup()
-                                .addContainerGap()
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBuscarLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(panelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(pnlLupa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap())
         );
 
-        lblContacto.setHorizontalAlignment(SwingConstants.CENTER);
+        lblContacto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblContacto.setText("buscatupala@gmail.com");
 
-        GroupLayout layout = new GroupLayout(this);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addComponent(panelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                                 .addComponent(panelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(26, 26, 26)
                                 .addComponent(lblContacto, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
+                                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(panelBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblContacto)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(panelLogo, 42, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(lblContacto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(panelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                .addContainerGap())
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>
 
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+    private void txtBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
+
+        txtBuscar.setText("");
+    }//GEN-LAST:event_txtUserActionPerformed
+
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarActionPerformed
+    }
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify
     private javax.swing.JLabel lblContacto;
-    private javax.swing.JPanel panelLogo;
     private javax.swing.JPanel panelBuscar;
+    private javax.swing.JPanel panelLogo;
     private javax.swing.JPanel pnlLupa;
     private javax.swing.JTextField txtBuscar;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration
 }
+
+
