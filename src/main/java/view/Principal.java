@@ -28,7 +28,7 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        pnlPalas = new imagePanel("/images/palas.jpg", "Palas");
+        pnlPalas = new imagePanel("/images/palas.jpg", "Pala");
         pnlOverview = new javax.swing.JScrollPane();
         txtOverview = new javax.swing.JTextArea();
         lblTitle = new javax.swing.JLabel();
@@ -55,7 +55,7 @@ public class Principal extends javax.swing.JFrame {
         txtOverview.setColumns(20);
         txtOverview.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtOverview.setRows(5);
-        txtOverview.setText("No gastes más de lo que necesitas, nos aseguramos de\nque el dinero que estés dispuesto a invertir vaya dirigido a\nencontrar tu pala de pádel ideal. Todo ello en base a\nlas característicasque busques.");
+        txtOverview.setText("No gastes más de lo que necesitas, nos aseguramos de \nque el dinero que estés dispuesto a invertir vaya dirigido a \nencontrar tu pala de pádel ideal. Todo ello en base a \nlas características que busques.");
         txtOverview.setBorder(null);
         pnlOverview.setViewportView(txtOverview);
 
@@ -68,29 +68,27 @@ public class Principal extends javax.swing.JFrame {
         pnlHeadline.setLayout(pnlHeadlineLayout);
         pnlHeadlineLayout.setHorizontalGroup(
                 pnlHeadlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(headline1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+                        .addGroup(pnlHeadlineLayout.createSequentialGroup()
+                                .addComponent(headline1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlHeadlineLayout.setVerticalGroup(
                 pnlHeadlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(headline1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(headline1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(pnlHeadline, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(119, 119, 119)
-                                                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(106, 106, 106)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(pnlOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(pnlPalas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(pnlOverview, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
+                                        .addComponent(pnlPalas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(pnlHeadline, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,Short.MAX_VALUE )
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +100,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(pnlPalas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(pnlOverview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(55, Short.MAX_VALUE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -154,3 +152,4 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextArea txtOverview;
     // End of variables declaration
 }
+
