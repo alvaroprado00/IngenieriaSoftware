@@ -9,11 +9,12 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
 
 public class SearchedPanel extends JPanel {
     private JPanel panelImage;
     private JLabel labelName;
-    private Pala pala = new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20, ImagePanel.createImageIcon("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala"));//esto es para la pala de la primera entrega tener una default que muestre
+    private Pala pala = new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20,new File("/images/Royal-Padel-Whip-Polietileno-2017.png"));//esto es para la pala de la primera entrega tener una default que muestre
 
     public SearchedPanel(Pala pala) {
 
@@ -74,7 +75,7 @@ public class SearchedPanel extends JPanel {
         prueba.add(new SearchedPanel());
         prueba.setSize(new Dimension(300,300));
         prueba.setVisible(true);*/
-        JPala a = new JPala(new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20, ImagePanel.createImageIcon("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala")));
+        JPala a = new JPala(new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20, new File("/images/Royal-Padel-Whip-Polietileno-2017.png")));
         a.setVisible(true);
     }
 }

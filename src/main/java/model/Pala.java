@@ -1,4 +1,9 @@
 package model;
+
+import view.ImagePanel;
+
+import java.io.File;
+
 /**
  * Clase creada para clasificar a las palas de la aplicación
  *
@@ -16,8 +21,9 @@ public class Pala {
     private int total;
     private double precio;
     private javax.swing.ImageIcon foto;
+    private File ficheroFoto;
 
-    public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, javax.swing.ImageIcon foto){
+    public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, File ficheroFoto){
         this.nombre=nombre;
         this.forma=forma;
         setPotencia(potencia);
@@ -28,7 +34,8 @@ public class Pala {
         if(precio > 0)
             this.precio=precio;
         this.total = (potencia + control + salida + manejabilidad + puntoDulce)/5;
-        this.foto = foto;
+        this.ficheroFoto = ficheroFoto;
+        this.foto= ImagePanel.createImageIcon(ficheroFoto.getPath(),nombre);
     }
 
     public void setPotencia(int potencia){

@@ -7,8 +7,7 @@ import model.Pala;
 public class JPala extends javax.swing.JFrame {
 
     private Pala pala;
-    private javax.swing.JButton btnDummy;
-    private javax.swing.JLabel lblFoto;
+    private ImagePanel pnlPalas;
     private javax.swing.JPanel pnlSuperior;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtForma;
@@ -30,13 +29,8 @@ public class JPala extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        this.setTitle("Pala seleccionada");
-
-        this.setIconImage(new ImagePanel("/images/icon.png", "icono para ventana de pala concreta").getImageFromPanel());
-
-        pnlSuperior = new javax.swing.JPanel();
-        btnDummy = new javax.swing.JButton();
-        lblFoto = new javax.swing.JLabel();
+        pnlSuperior = new Headline();
+        pnlPalas = new ImagePanel(pala.getFoto());
         txtNombre = new javax.swing.JTextField();
         txtForma = new javax.swing.JTextField();
         txtPotencia = new javax.swing.JTextField();
@@ -50,28 +44,24 @@ public class JPala extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        btnDummy.setText("jButton1");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(pnlSuperior);
         pnlSuperior.setLayout(jPanel1Layout);
         pnlSuperior.setBackground(new java.awt.Color(255, 255, 255));
-        
+
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(162, 162, 162)
-                                .addComponent(btnDummy)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnDummy)
                                 .addContainerGap())
         );
 
-        lblFoto.setIcon(pala.getFoto());
+        //lblFoto.setIcon(pala.getFoto());
 
         txtNombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -108,7 +98,7 @@ public class JPala extends javax.swing.JFrame {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(pnlSuperior, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pnlPalas, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
@@ -146,8 +136,8 @@ public class JPala extends javax.swing.JFrame {
                                                 .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(37, 37, Short.MAX_VALUE))
+                                        .addComponent(pnlPalas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(37, 37, Short.MAX_VALUE))
         );
 
         pack();
