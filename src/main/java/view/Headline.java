@@ -44,20 +44,29 @@ public class Headline extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new JUpload().setVisible(true);
+                new JUpload(identified).setVisible(true);
             }
         });
 
         pnlUser.setVisible(true);
+
+
         pnlUser.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent evt) {
-                frame.dispose();
-                new UserValidationUI();
+
+                if (!identified){
+                    frame.dispose();
+                    new UserValidationUI();
+                }else{
+                    javax.swing.JOptionPane.showMessageDialog(frame, "Lo siento, ya te has validado");
+
+                }
             }
         });
 
-        setPreferredSize(new java.awt.Dimension(560, 50));
+
+        //setPreferredSize(new java.awt.Dimension(560, 50));
 
         panelLogo.setPreferredSize(new java.awt.Dimension(82, 50));
         panelLogo.addMouseListener(new MouseAdapter() {
@@ -82,14 +91,10 @@ public class Headline extends javax.swing.JPanel {
         txtSearch.setText("Buscar pala");
         txtSearch.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
-                txtSearchMouseClicked(evt);
+                txtSearch.setText("");
             }
         });
-        txtSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchActionPerformed(evt);
-            }
-        });
+
 
         pnlLoupe.setPreferredSize(new java.awt.Dimension(100, 50));
         pnlLoupe.addMouseListener(new MouseAdapter() {
@@ -174,16 +179,6 @@ public class Headline extends javax.swing.JPanel {
                         .addComponent(pnlUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>
-
-    private void txtSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
-
-        txtSearch.setText("");
-    }//GEN-LAST:event_txtUserActionPerformed
-
-    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
 
     // Variables declaration - do not modify
     private javax.swing.JLabel lblContact;

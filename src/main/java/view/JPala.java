@@ -144,6 +144,9 @@ public class JPala extends javax.swing.JFrame {
         );
 
         pack();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Pala seleccionada");
+        this.setIconImage(new ImagePanel("/images/icon.png", "icono para la ventana de pala seleccionada").getImageFromPanel());
     }
 
 }

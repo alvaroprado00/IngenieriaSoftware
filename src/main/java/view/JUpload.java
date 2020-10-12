@@ -21,7 +21,8 @@ import java.awt.event.ActionListener;
 public class JUpload extends javax.swing.JFrame {
 
     /** Creates new form JUpload */
-    public JUpload() {
+    public JUpload(boolean identified) {
+        this.identified=identified;
         initComponents();
     }
 
@@ -367,6 +368,8 @@ public class JUpload extends javax.swing.JFrame {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -377,8 +380,11 @@ public class JUpload extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        pack();
+        this.setIconImage(new ImagePanel("/images/icon.png", "icono ventana JUpload").getImageFromPanel());
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Nueva pala");
+        this.pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubirActionPerformed
@@ -451,7 +457,8 @@ public class JUpload extends javax.swing.JFrame {
     private javax.swing.JTextField txtPuntoDulce;
     private javax.swing.JTextField txtSalida;
     private javax.swing.JButton btnFin;
-    private Pala pala;
+    private boolean identified;
+
     // End of variables declaration//GEN-END:variables
 
 }
