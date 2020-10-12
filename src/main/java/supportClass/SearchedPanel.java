@@ -72,13 +72,4 @@ public class SearchedPanel extends JPanel {
         labelName.addMouseListener(ml);
 
     }
-
-    public static void main(String[] args){
-        /*JFrame prueba= new JFrame();
-        prueba.add(new SearchedPanel());
-        prueba.setSize(new Dimension(300,300));
-        prueba.setVisible(true);*/
-        JPala a = new JPala(new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20, "/images/Royal-Padel-Whip-Polietileno-2017.png"),false);
-        a.setVisible(true);
-    }
 }
