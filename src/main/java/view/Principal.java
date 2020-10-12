@@ -14,7 +14,8 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    public Principal() {
+    public Principal(boolean identified) {
+        this.identified=identified;
         initComponents();
     }
 
@@ -36,7 +37,7 @@ public class Principal extends javax.swing.JFrame {
         txtOverview = new javax.swing.JTextArea();
         lblTitle = new javax.swing.JLabel();
         pnlHeadline = new javax.swing.JPanel();
-        headline = new Headline();
+        headline = new Headline(this,identified);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -141,7 +142,8 @@ public class Principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal().setVisible(true);
+                new Principal(true).setVisible(true);
+                new Principal(false).setVisible(true);
             }
         });
     }
@@ -153,5 +155,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane pnlOverview;
     private javax.swing.JPanel pnlPalas;
     private javax.swing.JTextArea txtOverview;
+    private boolean identified;
     // End of variables declaration
 }

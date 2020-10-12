@@ -13,7 +13,7 @@ public class jVentana {
         JFrame jFrame = new JFrame();
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel pnl = new Headline();
+        JPanel pnl = new Headline(null,false);
         jFrame.add(pnl);
         jFrame.pack();
         jFrame.setVisible(true);

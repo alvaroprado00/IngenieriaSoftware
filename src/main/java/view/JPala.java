@@ -19,8 +19,10 @@ public class JPala extends javax.swing.JFrame {
     private javax.swing.JTextField txtPuntoDulce;
     private javax.swing.JTextField txtTotal;
     private javax.swing.JTextField txtPrecio;
+    private boolean identified;
 
-    public JPala(Pala pala) {
+    public JPala(Pala pala, boolean identified) {
+        this.identified = identified;
         this.pala = pala;
         initComponents();
     }
@@ -31,7 +33,7 @@ public class JPala extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlHeadline = new javax.swing.JPanel();
-        headline = new Headline();
+        headline = new Headline(this, identified);
         pnlPalas = new ImagePanel(pala.getFoto());
         txtNombre = new javax.swing.JTextField();
         txtForma = new javax.swing.JTextField();

@@ -44,7 +44,7 @@ public class UserValidationUI extends javax.swing.JFrame {
         imagePanel = new javax.swing.JPanel();
         txtMensaje = new javax.swing.JTextField();
         pnlHeadline = new javax.swing.JPanel();
-        headline = new Headline();
+        headline = new Headline(this,false);
 
         imagePanel= new ImagePanel("/images/userValidation.jpg", "Image for user validations");
 
@@ -199,6 +199,8 @@ public class UserValidationUI extends javax.swing.JFrame {
 
         if(identified){
             javax.swing.JOptionPane.showMessageDialog(this, "Bienvenido: "+txtUser.getText());
+            this.dispose();
+            new Principal(true).setVisible(true);
             //Hacemos otra cosa
         }else{
             javax.swing.JOptionPane.showMessageDialog(this, "El usuario NO existe");

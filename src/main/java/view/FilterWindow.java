@@ -24,7 +24,8 @@ public class FilterWindow extends javax.swing.JFrame {
     /**
      * Creates new form VentanaFiltro
      */
-    public FilterWindow() {
+    public FilterWindow(boolean identified) {
+        this.identified = identified;
         initComponents();
     }
 
@@ -66,7 +67,7 @@ public class FilterWindow extends javax.swing.JFrame {
         scrollPane1 = new javax.swing.JScrollPane();
         panelResultsLayout = new javax.swing.JPanel();
         panelResultsHolder = new JPanel();
-        headline1 = new Headline();
+        headline1 = new Headline(this, identified);
 
         //para primera entrega
         panelResultsHolder.setSize(panelResultsLayout.getWidth(), panelResultsHolder.getHeight());
@@ -533,7 +534,7 @@ public class FilterWindow extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FilterWindow().setVisible(true);
+                new FilterWindow(false).setVisible(true);
             }
         });
     }
@@ -564,8 +565,8 @@ public class FilterWindow extends javax.swing.JFrame {
     private java.awt.Label labelManeja;
     private java.awt.Label labelPuntoDulce;
     private javax.swing.JPanel panelFiltros;
-    // End of variables declaration
     private JPanel panelResultsHolder;
+    private boolean identified;
 
 
     /** Esta es la funcion para cargar todos los resultados de la busqueda*/

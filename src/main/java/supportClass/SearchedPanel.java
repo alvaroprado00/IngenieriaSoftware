@@ -15,11 +15,14 @@ public class SearchedPanel extends JPanel {
     private JPanel panelImage;
     private JLabel labelName;
     private Pala pala = new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20,"/images/Royal-Padel-Whip-Polietileno-2017.png");//esto es para la pala de la primera entrega tener una default que muestre
+    private boolean identified;
 
-    public SearchedPanel(Pala pala) {
+    public SearchedPanel(Pala pala, boolean identified) {
 
         this.pala = pala;
         this.setLayout(new BorderLayout());
+
+        this. identified = identified;
 
         panelImage = new ImagePanel(pala.getFoto());
         labelName = new JLabel(pala.getNombre());
@@ -59,7 +62,7 @@ public class SearchedPanel extends JPanel {
         MouseListener ml  = new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                JPala a = new JPala(pala);
+                JPala a = new JPala(pala,identified);
                 a.setVisible(true);
             }
         };
@@ -75,7 +78,7 @@ public class SearchedPanel extends JPanel {
         prueba.add(new SearchedPanel());
         prueba.setSize(new Dimension(300,300));
         prueba.setVisible(true);*/
-        JPala a = new JPala(new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20, "/images/Royal-Padel-Whip-Polietileno-2017.png"));
+        JPala a = new JPala(new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20, "/images/Royal-Padel-Whip-Polietileno-2017.png"),false);
         a.setVisible(true);
     }
 }

@@ -16,7 +16,9 @@ public class Headline extends javax.swing.JPanel {
     /**
      * Creates new form Headline
      */
-    public Headline() {
+    public Headline(JFrame frame, boolean identified) {
+        this.frame = frame;
+        this.identified = identified;
         initComponents();
     }
 
@@ -35,11 +37,22 @@ public class Headline extends javax.swing.JPanel {
         pnlLoupe = new ImagePanel("/images/loupe.png", "Lupa");
         lblContact = new javax.swing.JLabel();
         pnlUser = new ImagePanel("/images/user.png", "Palas");
+        btnUpload = new javax.swing.JButton("Subir Pala");
+
+        btnUpload.setVisible(identified);
+        btnUpload.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                new JUpload().setVisible(true);
+            }
+        });
 
         pnlUser.setVisible(true);
         pnlUser.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent evt) {
+                frame.dispose();
                 new UserValidationUI();
             }
         });
@@ -47,6 +60,13 @@ public class Headline extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(560, 50));
 
         panelLogo.setPreferredSize(new java.awt.Dimension(82, 50));
+        panelLogo.addMouseListener(new MouseAdapter() {
+
+            public void mouseClicked(MouseEvent evt) {
+                frame.dispose();
+                new Principal(identified).setVisible((boolean)true);
+            }
+        });
 
         javax.swing.GroupLayout panelLogoLayout = new javax.swing.GroupLayout(panelLogo);
         panelLogo.setLayout(panelLogoLayout);
@@ -72,6 +92,13 @@ public class Headline extends javax.swing.JPanel {
         });
 
         pnlLoupe.setPreferredSize(new java.awt.Dimension(100, 50));
+        pnlLoupe.addMouseListener(new MouseAdapter() {
+
+            public void mouseClicked(MouseEvent evt) {
+                frame.dispose();
+                new FilterWindow(identified).setVisible((boolean)true);
+            }
+        });
 
         javax.swing.GroupLayout pnlLoupeLayout = new javax.swing.GroupLayout(pnlLoupe);
         pnlLoupe.setLayout(pnlLoupeLayout);
@@ -125,11 +152,12 @@ public class Headline extends javax.swing.JPanel {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addComponent(panelLogo, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 15, Short.MAX_VALUE)
                                 .addComponent(pnlSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 11, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 5, Short.MAX_VALUE)
                                 .addComponent(lblContact, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, Short.MAX_VALUE)
+                                .addGap(5, 5, Short.MAX_VALUE)
+                                .addComponent(btnUpload, javax.swing.GroupLayout.DEFAULT_SIZE,javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(pnlUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -142,6 +170,7 @@ public class Headline extends javax.swing.JPanel {
                                                 .addComponent(lblContact))
                                         .addComponent(pnlSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addContainerGap())
+                        .addComponent(btnUpload)
                         .addComponent(pnlUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>
@@ -163,5 +192,8 @@ public class Headline extends javax.swing.JPanel {
     private javax.swing.JPanel pnlSearch;
     private javax.swing.JPanel pnlUser;
     private javax.swing.JTextField txtSearch;
+    private javax.swing.JFrame frame;
+    private javax.swing.JButton btnUpload;
+    private boolean identified;
     // End of variables declaration
 }
