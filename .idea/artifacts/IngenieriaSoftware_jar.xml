@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="IngenieriaSoftware:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/IngenieriaSoftware_jar</output-path>
+    <root id="archive" name="IngenieriaSoftware.jar">
+      <element id="module-output" name="IngenieriaSoftware" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/opencsv/opencsv/3.7/opencsv-3.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
