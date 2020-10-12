@@ -1,13 +1,10 @@
 package view;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.awt.event.MouseEvent;
-
 /**
  *
  * @author Jaime
@@ -75,8 +72,9 @@ public class Principal extends javax.swing.JFrame {
         pnlHeadlineLayout.setHorizontalGroup(
                 pnlHeadlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(pnlHeadlineLayout.createSequentialGroup()
-                                .addComponent(headline, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(headline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlHeadlineLayout.setVerticalGroup(
                 pnlHeadlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,8 +109,7 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
         this.setIconImage(new ImagePanel("/images/icon.png", "icono de la ventana").getImageFromPanel());
-        this.setLocationRelativeTo(null);
-    }// </editor-fold>
+        this.setLocationRelativeTo(null);    }// </editor-fold>
 
     /**
      * @param args the command line arguments
@@ -158,4 +155,3 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextArea txtOverview;
     // End of variables declaration
 }
-

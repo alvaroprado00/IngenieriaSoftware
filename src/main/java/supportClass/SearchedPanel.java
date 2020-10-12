@@ -75,7 +75,7 @@ public class SearchedPanel extends JPanel {
         prueba.add(new SearchedPanel());
         prueba.setSize(new Dimension(300,300));
         prueba.setVisible(true);*/
-        JPala a = new JPala(new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20, new File("/images/Royal-Padel-Whip-Polietileno-2017.png")));
+        JPala a = new JPala(new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20, "/images/Royal-Padel-Whip-Polietileno-2017.png"));
         a.setVisible(true);
     }
 }
