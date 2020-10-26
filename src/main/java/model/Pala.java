@@ -24,8 +24,8 @@ public class Pala {
     private File ficheroFoto;
 
     public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, File ficheroFoto){
-        this.nombre=nombre;
-        this.forma=forma;
+        setNombre(nombre);
+        setForma(forma);
         setPotencia(potencia);
         setControl(control);
         setSalida(salida);
@@ -33,8 +33,8 @@ public class Pala {
         setPuntoDulce(puntoDulce);
         if(precio > 0)
             this.precio=precio;
-        this.total = (potencia + control + salida + manejabilidad + puntoDulce)/5;
-        this.ficheroFoto = ficheroFoto;
+        this.setTotal();
+        this.setFicheroFoto(ficheroFoto);
         this.foto= ImagePanel.createImageIcon(ficheroFoto.getPath(),nombre);
     }
 
@@ -50,6 +50,14 @@ public class Pala {
             this.precio=precio;
         this.total = (potencia + control + salida + manejabilidad + puntoDulce)/5;
         this.foto= ImagePanel.createImageIcon(ruta,nombre);
+    }
+
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    }
+
+    public void setForma(String forma){
+        this.forma=forma;
     }
 
     public void setPotencia(int potencia){
@@ -77,6 +85,13 @@ public class Pala {
             this.puntoDulce=puntoDulce;
     }
 
+    public void setTotal(){
+        this.total=(potencia + control + salida + manejabilidad + puntoDulce)/5;
+    }
+
+    public void setFicheroFoto(File ficheroFoto){
+        this.ficheroFoto=ficheroFoto;
+    }
     public String getNombre() {
         return nombre;
     }

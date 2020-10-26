@@ -3,6 +3,7 @@ package controller;
 import model.User;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,6 +39,9 @@ public class UserIO {
 
             //System.out.println(new File(".").getAbsolutePath());
             //Nos sirve para ver la direccion desde la que se ejecuta el codigo y poder así definir el FileReader
+
+            //Para lectura desde el jar acompañar de directorio /resources/persistence/users2.csv y poner el path:
+            //./resources/persistence/users2.csv
 
             br = new BufferedReader(new FileReader("target/classes/files/users2.csv"));
             String nextLine=null;
