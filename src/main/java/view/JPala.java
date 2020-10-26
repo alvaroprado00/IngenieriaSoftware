@@ -45,7 +45,7 @@ public class JPala extends javax.swing.JFrame {
         txtTotal = new javax.swing.JTextField();
         txtPrecio = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout pnlHeadlineLayout = new javax.swing.GroupLayout(pnlHeadline);
@@ -69,30 +69,39 @@ public class JPala extends javax.swing.JFrame {
         txtNombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNombre.setText(pala.getNombre());
+        txtNombre.setEditable(false);
 
         txtForma.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtForma.setText("Forma: "+pala.getForma());
+        txtForma.setEditable(false);
 
         txtPotencia.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtPotencia.setText("Potencia: "+String.valueOf(pala.getPotencia()));
+        txtPotencia.setEditable(false);
 
         txtControl.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtControl.setText("Control: " + String.valueOf(pala.getControl()));
+        txtControl.setEditable(false);
 
         txtSalida.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtSalida.setText("Salida de bola: "+ String.valueOf(pala.getSalida()));
+        txtSalida.setEditable(false);
 
         txtManejabilidad.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtManejabilidad.setText("Manejabilidad"+String.valueOf(pala.getManejabilidad()));
+        txtManejabilidad.setText("Manejabilidad: "+String.valueOf(pala.getManejabilidad()));
+        txtManejabilidad.setEditable(false);
 
         txtPuntoDulce.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtPuntoDulce.setText("Punto dulce: " + String.valueOf(pala.getPuntoDulce()));
+        txtPuntoDulce.setEditable(false);
 
         txtTotal.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtTotal.setText("Total: "+String.valueOf(pala.getTotal()));
+        txtTotal.setEditable(false);
 
         txtPrecio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtPrecio.setText("Precio: " + String.valueOf(pala.getPrecio()));
+        txtPrecio.setEditable(false);
 
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -14,10 +14,12 @@ import java.awt.event.MouseListener;
 
 /**
  *
- * @author alvar
+ * @author Alvaro Prado
  */
 public class UserValidationUI extends javax.swing.JFrame {
 
+    //Atributo que nos sirve para saber si el usuario está identificado
+    boolean identified;
     /**
      * Creates new form userValidation
      */
@@ -195,13 +197,12 @@ public class UserValidationUI extends javax.swing.JFrame {
 
     private void btnValidateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidateActionPerformed
         UserController uc= new UserController();
-        boolean identified= uc.identifyUser(Integer.parseInt(txtUser.getText()), String.valueOf(txtPassword.getPassword()));
+        identified= uc.identifyUser(Integer.parseInt(txtUser.getText()), String.valueOf(txtPassword.getPassword()));
 
         if(identified){
             javax.swing.JOptionPane.showMessageDialog(this, "Bienvenido: "+txtUser.getText());
             this.dispose();
             new Principal(true).setVisible(true);
-            //Hacemos otra cosa
         }else{
             javax.swing.JOptionPane.showMessageDialog(this, "El usuario NO existe");
         }
@@ -217,6 +218,7 @@ public class UserValidationUI extends javax.swing.JFrame {
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {
         javax.swing.JOptionPane.showMessageDialog(this, "Bye!");
         this.dispose();
+        new Principal(identified);
     }
 
 

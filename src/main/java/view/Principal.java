@@ -110,7 +110,9 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
         this.setIconImage(new ImagePanel("/images/icon.png", "icono de la ventana").getImageFromPanel());
-        this.setLocationRelativeTo(null);    }// </editor-fold>
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+    }// </editor-fold>
 
     /**
      * @param args the command line arguments

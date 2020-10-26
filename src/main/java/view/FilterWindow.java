@@ -474,14 +474,20 @@ public class FilterWindow extends javax.swing.JFrame {
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        boxPalaShape2.setSelected(false);
+        boxPalaShape3.setSelected(false);
     }
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        boxPalaShape1.setSelected(false);
+        boxPalaShape3.setSelected(false);
     }
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        boxPalaShape1.setSelected(false);
+        boxPalaShape2.setSelected(false);
     }
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
