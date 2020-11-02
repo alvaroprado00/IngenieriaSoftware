@@ -12,11 +12,13 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 
 /**
  *
- * @author nacho
+ * @author Nacho
  */
 public class JUpload extends javax.swing.JFrame {
 
@@ -63,11 +65,10 @@ public class JUpload extends javax.swing.JFrame {
         txtPuntoDulce = new javax.swing.JTextField();
         btnFin = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 18));
+        lblTitulo.setFont(new java.awt.Font("Rockwell", 1, 18));
         lblTitulo.setText("RELLENA LOS DATOS");
 
         lblNombre.setText("NOMBRE:");
@@ -96,6 +97,38 @@ public class JUpload extends javax.swing.JFrame {
         btnSubir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubirActionPerformed(evt);
+            }
+        });
+
+        this.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+
+            }
+            @Override
+            public void windowClosing(WindowEvent e) {
+                dispose();
+                new Principal(identified);
+            }
+            @Override
+            public void windowClosed(WindowEvent e) {
+
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {
+
+            }
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+
+            }
+            @Override
+            public void windowActivated(WindowEvent e) {
+
+            }
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+
             }
         });
 
@@ -380,11 +413,15 @@ public class JUpload extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        this.pack();
         this.setIconImage(new ImagePanel("/images/icon.png", "icono ventana JUpload").getImageFromPanel());
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        this.active=true;
         this.setTitle("Nueva pala");
-        this.pack();
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubirActionPerformed
@@ -457,8 +494,10 @@ public class JUpload extends javax.swing.JFrame {
     private javax.swing.JTextField txtPuntoDulce;
     private javax.swing.JTextField txtSalida;
     private javax.swing.JButton btnFin;
-    private boolean identified;
-
     // End of variables declaration//GEN-END:variables
 
+
+    //Variables declaration (different purposes rather than netBeans)
+    private boolean identified;
+    private boolean active;
 }

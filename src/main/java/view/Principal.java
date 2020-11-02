@@ -1,10 +1,8 @@
 package view;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-import java.awt.event.MouseEvent;
+
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
 /**
  *
  * @author Jaime
@@ -38,6 +36,44 @@ public class Principal extends javax.swing.JFrame {
         lblTitle = new javax.swing.JLabel();
         pnlHeadline = new javax.swing.JPanel();
         headline = new Headline(this,identified);
+
+        this.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+                //when disposed it calls the windowClosed event
+                setActive(false);
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,8 +147,13 @@ public class Principal extends javax.swing.JFrame {
         pack();
         this.setIconImage(new ImagePanel("/images/icon.png", "icono de la ventana").getImageFromPanel());
         this.setLocationRelativeTo(null);
+        setActive(true);
         this.setVisible(true);
     }// </editor-fold>
+
+    private static void setActive(boolean active){
+        ACTIVE =active;
+    }
 
     /**
      * @param args the command line arguments
@@ -144,7 +185,7 @@ public class Principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal(false).setVisible(true);
+                new Principal(false);
             }
         });
     }
@@ -156,6 +197,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane pnlOverview;
     private javax.swing.JPanel pnlPalas;
     private javax.swing.JTextArea txtOverview;
-    private boolean identified;
+
     // End of variables declaration
+
+
+    //Variables declaration(different purpose that netBeans)
+    public static boolean ACTIVE;
+    private boolean identified;
 }
+

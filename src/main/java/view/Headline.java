@@ -41,19 +41,20 @@ public class Headline extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new JUpload(identified).setVisible(true);
+                new JUpload(identified);
             }
         });
 
         pnlUser.setVisible(true);
-
         pnlUser.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent evt) {
 
                 if (!identified){
-                    frame.dispose();
-                    new UserValidationUI();
+                    if(!UserValidationUI.ACTIVE) {
+                        frame.dispose();
+                        new UserValidationUI();
+                    }
                 }else{
                     frame.dispose();
                     new JExitWindow();
@@ -64,11 +65,15 @@ public class Headline extends javax.swing.JPanel {
         //setPreferredSize(new java.awt.Dimension(655, 53));
 
         panelLogo.setPreferredSize(new java.awt.Dimension(82, 50));
+
         panelLogo.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent evt) {
-                frame.dispose();
-                new Principal(identified).setVisible((boolean)true);
+
+                if(!Principal.ACTIVE) {
+                    frame.dispose();
+                    new Principal(identified);
+                }
             }
         });
 
@@ -95,8 +100,12 @@ public class Headline extends javax.swing.JPanel {
         pnlLoupe.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent evt) {
-                frame.dispose();
-                new FilterWindow(identified).setVisible((boolean)true);
+
+                if (!FilterWindow.ACTIVE) {
+                    frame.dispose();
+                    new FilterWindow(identified);
+                }
+
             }
         });
 

@@ -2,10 +2,7 @@ package view;
 
 import controller.UserController;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 /**
  *
@@ -43,8 +40,6 @@ public class UserValidationUI extends javax.swing.JFrame {
 
         imagePanel= new ImagePanel("/images/userValidation.jpg", "Image for user validations");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         validationPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Validation"));
 
         lblUser.setText("USER:");
@@ -81,6 +76,38 @@ public class UserValidationUI extends javax.swing.JFrame {
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
+            }
+        });
+
+        this.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+
+            }
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+            }
+            @Override
+            public void windowClosed(WindowEvent e) {
+                //when disposed it calls this method and we set the state to inactive
+                setActive(false);
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {
+
+            }
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+
+            }
+            @Override
+            public void windowActivated(WindowEvent e) {
+
+            }
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+
             }
         });
 
@@ -186,6 +213,8 @@ public class UserValidationUI extends javax.swing.JFrame {
         this.setTitle("Validation page");
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+        setActive(true);
+        this.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     }// </editor-fold>                        
 
     private void btnValidateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidateActionPerformed
@@ -214,6 +243,11 @@ public class UserValidationUI extends javax.swing.JFrame {
         new Principal(identified);
     }
 
+    private static void setActive(boolean active){
+        ACTIVE =active;
+    }
+
+
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton btnExit;
@@ -232,5 +266,6 @@ public class UserValidationUI extends javax.swing.JFrame {
     //Variables declaration (for different purposes than netBeans)
     private Headline headline;
     private static boolean identified;
+    public static boolean ACTIVE;
 
 }

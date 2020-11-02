@@ -7,6 +7,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -34,9 +36,6 @@ public class FilterWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        this.setTitle("Ventana de filtrado");
-
-        this.setIconImage(new ImagePanel("/images/icon.png", "icono para ventana de pala concreta").getImageFromPanel());
 
         panelFiltros = new javax.swing.JPanel();
         sliderPotencia = new javax.swing.JSlider();
@@ -75,7 +74,39 @@ public class FilterWindow extends javax.swing.JFrame {
         cargarPaneles(paneles);
         //hasta aqui
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        this.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+
+            }
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+            }
+            @Override
+            public void windowClosed(WindowEvent e) {
+                 //when disposed it calls windowClosed
+
+                setActive(false);
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {
+
+            }
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+
+            }
+            @Override
+            public void windowActivated(WindowEvent e) {
+
+            }
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+
+            }
+        });
+
 
         sliderPotencia.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         sliderPotencia.setMajorTickSpacing(1);
@@ -480,8 +511,12 @@ public class FilterWindow extends javax.swing.JFrame {
             }
         });
 
-
         pack();
+        this.setTitle("Ventana de filtrado");
+        this.setIconImage(new ImagePanel("/images/icon.png", "icono para ventana de pala concreta").getImageFromPanel());
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setVisible(true);
+        setActive(true);
     }// </editor-fold>
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -522,13 +557,31 @@ public class FilterWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
+
+    private static void setActive(boolean active){
+        ACTIVE=active;
+    }
+
+
+    /** Esta es la funcion para cargar todos los resultados de la busqueda*/
+    public void cargarPanel(SearchedPanel panel){
+        panelResultsHolder.add(panel);
+    }
+
+    public void cargarPaneles(ArrayList<SearchedPanel> paneles){
+        Iterator it = paneles.iterator();
+
+        while(it.hasNext())
+            panelResultsHolder.add((SearchedPanel) it.next());
+    }
+
+
     // Variables declaration - do not modify
     private javax.swing.JButton buttonFilter;
     private javax.swing.JCheckBox boxPalaShape1;
     private javax.swing.JCheckBox boxPalaShape2;
     private javax.swing.JCheckBox boxPalaShape3;
     private javax.swing.JPanel panelResultsLayout;
-    private Headline headline;
     private javax.swing.JPanel pnlHeadline;
     private javax.swing.JScrollPane scrollPane1;
     private javax.swing.JSlider sliderPotencia;
@@ -549,19 +602,13 @@ public class FilterWindow extends javax.swing.JFrame {
     private java.awt.Label labelManeja;
     private java.awt.Label labelPuntoDulce;
     private javax.swing.JPanel panelFiltros;
+
+
+    //Variables declaration(different purposes that netBeans)
+
+    public static boolean ACTIVE;
     private JPanel panelResultsHolder;
     private boolean identified;
+    private Headline headline;
 
-
-    /** Esta es la funcion para cargar todos los resultados de la busqueda*/
-    public void cargarPanel(SearchedPanel panel){
-        panelResultsHolder.add(panel);
-    }
-
-    public void cargarPaneles(ArrayList<SearchedPanel> paneles){
-        Iterator it = paneles.iterator();
-
-        while(it.hasNext())
-            panelResultsHolder.add((SearchedPanel) it.next());
-    }
 }
