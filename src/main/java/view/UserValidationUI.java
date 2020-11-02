@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import controller.UserController;
@@ -18,8 +13,6 @@ import java.awt.event.MouseListener;
  */
 public class UserValidationUI extends javax.swing.JFrame {
 
-    //Atributo que nos sirve para saber si el usuario está identificado
-    boolean identified;
     /**
      * Creates new form userValidation
      */
@@ -229,10 +222,15 @@ public class UserValidationUI extends javax.swing.JFrame {
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUser;
     private javax.swing.JPanel pnlHeadline;
-    private Headline headline;
     private javax.swing.JTextField txtMensaje;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUser;
     private javax.swing.JPanel validationPanel;
-    // End of variables declaration                   
+    // End of variables declaration
+
+
+    //Variables declaration (for different purposes than netBeans)
+    private Headline headline;
+    private static boolean identified;
+
 }

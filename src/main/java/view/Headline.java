@@ -1,9 +1,6 @@
 package view;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
 import javax.swing.*;
 import java.awt.event.*;
 /**
@@ -14,7 +11,7 @@ public class Headline extends javax.swing.JPanel {
 
 
     /**
-     * Creates new form Cabecera
+     * Creates new form HeadLine
      */
     public Headline(JFrame frame, boolean identified) {
         this.frame = frame;
@@ -58,8 +55,8 @@ public class Headline extends javax.swing.JPanel {
                     frame.dispose();
                     new UserValidationUI();
                 }else{
-                    javax.swing.JOptionPane.showMessageDialog(frame, "Lo siento, ya te has validado");
-
+                    frame.dispose();
+                    new JExitWindow();
                 }
             }
         });

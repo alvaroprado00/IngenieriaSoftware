@@ -1,15 +1,10 @@
-package view;/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package view;
 
 import supportClass.SearchedPanel;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -17,12 +12,13 @@ import java.util.Iterator;
 
 /**
  *
- * @author allor
+ * @author Lorenzo
  */
+
 public class FilterWindow extends javax.swing.JFrame {
 
     /**
-     * Creates new form VentanaFiltro
+     * Creates new form FilterWindow
      */
     public FilterWindow(boolean identified) {
         this.identified = identified;
