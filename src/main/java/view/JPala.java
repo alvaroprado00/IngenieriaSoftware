@@ -8,8 +8,6 @@ public class JPala extends javax.swing.JFrame {
 
     private Pala pala;
     private ImagePanel pnlPalas;
-    private javax.swing.JPanel pnlHeadline;
-    private Headline headline;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtForma;
     private javax.swing.JTextField txtPotencia;
@@ -32,8 +30,6 @@ public class JPala extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        pnlHeadline = new javax.swing.JPanel();
-        headline = new Headline(this, identified);
         pnlPalas = new ImagePanel(pala.getFoto());
         txtNombre = new javax.swing.JTextField();
         txtForma = new javax.swing.JTextField();
@@ -48,21 +44,6 @@ public class JPala extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout pnlHeadlineLayout = new javax.swing.GroupLayout(pnlHeadline);
-        pnlHeadline.setLayout(pnlHeadlineLayout);
-        pnlHeadline.setBackground(new java.awt.Color(240, 240, 240, 0));
-
-        pnlHeadlineLayout.setHorizontalGroup(
-                pnlHeadlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnlHeadlineLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(headline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnlHeadlineLayout.setVerticalGroup(
-                pnlHeadlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(headline, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
 
         //lblFoto.setIcon(pala.getFoto());
 
@@ -108,8 +89,8 @@ public class JPala extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                        .addComponent(pnlHeadline, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE) //addContainerGap()
                                 .addComponent(pnlPalas, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -122,12 +103,11 @@ public class JPala extends javax.swing.JFrame {
                                         .addComponent(txtPuntoDulce)
                                         .addComponent(txtTotal)
                                         .addComponent(txtPrecio))
-                                .addContainerGap())
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addComponent(pnlHeadline, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(layout.createSequentialGroup()

@@ -1,20 +1,20 @@
-package view;/*
+package view;
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import javax.swing.*;
 import java.awt.event.*;
-
 /**
  *
  * @author Jaime
  */
 public class Headline extends javax.swing.JPanel {
 
+
     /**
-     * Creates new form Headline
+     * Creates new form Cabecera
      */
     public Headline(JFrame frame, boolean identified) {
         this.frame = frame;
@@ -50,7 +50,6 @@ public class Headline extends javax.swing.JPanel {
 
         pnlUser.setVisible(true);
 
-
         pnlUser.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent evt) {
@@ -65,8 +64,7 @@ public class Headline extends javax.swing.JPanel {
             }
         });
 
-
-        //setPreferredSize(new java.awt.Dimension(560, 50));
+        //setPreferredSize(new java.awt.Dimension(655, 53));
 
         panelLogo.setPreferredSize(new java.awt.Dimension(82, 50));
         panelLogo.addMouseListener(new MouseAdapter() {
@@ -156,14 +154,15 @@ public class Headline extends javax.swing.JPanel {
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addComponent(panelLogo, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 15, Short.MAX_VALUE)
+                                .addComponent(panelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
                                 .addComponent(pnlSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 5, Short.MAX_VALUE)
+                                .addGap(11, 11, 11)
                                 .addComponent(lblContact, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(5, 5, Short.MAX_VALUE)
-                                .addComponent(btnUpload, javax.swing.GroupLayout.DEFAULT_SIZE,javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pnlUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnUpload, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                                .addGap(42, 42, 42)
+                                .addComponent(pnlUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,23 +171,27 @@ public class Headline extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addContainerGap()
-                                                .addComponent(lblContact))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(lblContact)
+                                                        .addComponent(btnUpload)))
                                         .addComponent(pnlSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addContainerGap())
-                        .addComponent(btnUpload)
                         .addComponent(pnlUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>
 
+
+
+
     // Variables declaration - do not modify
+    private javax.swing.JButton btnUpload;
     private javax.swing.JLabel lblContact;
     private javax.swing.JPanel panelLogo;
     private javax.swing.JPanel pnlLoupe;
     private javax.swing.JPanel pnlSearch;
     private javax.swing.JPanel pnlUser;
     private javax.swing.JTextField txtSearch;
-    private javax.swing.JFrame frame;
-    private javax.swing.JButton btnUpload;
-    private boolean identified;
+    private final JFrame frame;
+    private final boolean identified;
     // End of variables declaration
 }
