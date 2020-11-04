@@ -7,6 +7,7 @@
 package view;
 import model.Pala;
 
+import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -457,8 +458,10 @@ public class JUpload extends javax.swing.JFrame {
 
 
     private void btnFinActionPerformed(java.awt.event.ActionEvent evt){
-        //pala = new Pala(lblNombre.getText(),comboForma.getSelectedItem(),Integer.parseInt(txtPotencia.getText()),)
-        //Crearia la pala y la guarda
+        pala = new Pala(lblNombre.getText(), (String) comboForma.getSelectedItem(),Integer.parseInt(txtPotencia.getText()),Integer.parseInt(txtControl.getText()),Integer.parseInt(txtSalida.getText()),Integer.parseInt(txtManejabilidad.getText()),
+                Integer.parseInt(txtPuntoDulce.getText()),Double.parseDouble(txtPrecio.getText()),jFileChooser.getSelectedFile().getPath());
+
+
         new Principal(true).setVisible((boolean)true);
         this.dispose();
 
@@ -494,6 +497,7 @@ public class JUpload extends javax.swing.JFrame {
     private javax.swing.JTextField txtPuntoDulce;
     private javax.swing.JTextField txtSalida;
     private javax.swing.JButton btnFin;
+    private Pala pala;
     // End of variables declaration//GEN-END:variables
 
 

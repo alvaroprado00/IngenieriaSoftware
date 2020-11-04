@@ -163,7 +163,7 @@ public class UserValidationUI extends javax.swing.JFrame {
 
         txtMensaje.setEditable(false);
         txtMensaje.setFont(new java.awt.Font("Rockwell", 1, 12)); // NOI18N
-        txtMensaje.setText("Identifícate y pasa a formar parte del nuesto equipo: ");
+        txtMensaje.setText("Identifícate y pasa a formar parte de nuesto equipo: ");
         txtMensaje.setBorder(null);
 
 

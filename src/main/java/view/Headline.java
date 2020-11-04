@@ -94,6 +94,17 @@ public class Headline extends javax.swing.JPanel {
                 txtSearch.setText("");
             }
         });
+        txtSearch.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode()==KeyEvent.VK_ENTER) {
+                    if (!FilterWindow.ACTIVE){
+                        frame.dispose();
+                        new FilterWindow(identified);
+                    }
+                }
+            }
+        });
 
 
         pnlLoupe.setPreferredSize(new java.awt.Dimension(100, 50));
