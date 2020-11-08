@@ -32,7 +32,7 @@ public class UserValidationUI extends javax.swing.JFrame {
         txtUser = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
         btnValidate = new javax.swing.JButton();
-        btnExit = new javax.swing.JButton();
+        btnRegister = new javax.swing.JButton();
         imagePanel = new javax.swing.JPanel();
         txtMensaje = new javax.swing.JTextField();
         pnlHeadline = new javax.swing.JPanel();
@@ -72,10 +72,10 @@ public class UserValidationUI extends javax.swing.JFrame {
             }
         });
 
-        btnExit.setText("Exit");
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
+        btnRegister.setText("Register");
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExitActionPerformed(evt);
+                btnRegisterActionPerformed(evt);
             }
         });
 
@@ -127,8 +127,8 @@ public class UserValidationUI extends javax.swing.JFrame {
                                 .addContainerGap(34, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, validationPanelLayout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34)
+                                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(btnValidate, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(67, 67, 67))
         );
@@ -146,7 +146,7 @@ public class UserValidationUI extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(validationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(btnValidate)
-                                        .addComponent(btnExit))
+                                        .addComponent(btnRegister))
                                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -237,10 +237,9 @@ public class UserValidationUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnValidateActionPerformed
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Bye!");
-        this.dispose();
-        new Principal(identified);
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {
+
+        new JRegisterWindow();
     }
 
     private static void setActive(boolean active){
@@ -250,7 +249,7 @@ public class UserValidationUI extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnRegister;
     private javax.swing.JButton btnValidate;
     private javax.swing.JPanel imagePanel;
     private javax.swing.JLabel lblPassword;

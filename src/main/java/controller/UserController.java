@@ -40,6 +40,10 @@ public class UserController {
 
     }
 
+   /* public boolean registerUser(int userID, String password){
+
+    }
+*/
     public void getRegisteredUsers(){
         registeredUsers=userReader.getRegisteredUsers();
     }
