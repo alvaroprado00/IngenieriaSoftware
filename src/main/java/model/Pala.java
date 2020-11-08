@@ -22,6 +22,7 @@ public class Pala {
     private double precio;
     private javax.swing.ImageIcon foto;
     private File ficheroFoto;
+    private String ruta;
 
     public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, File ficheroFoto){
         setNombre(nombre);
@@ -38,6 +39,19 @@ public class Pala {
         this.foto= ImagePanel.createImageIcon(ficheroFoto.getPath(),nombre);
     }
 
+    public Pala(String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce){ //Para la busqueda de la pala por valores
+        this.forma=forma;
+        this.potencia=potencia;
+        this.control=control;
+        this.salida=salida;
+        this.manejabilidad=manejabilidad;
+        this.puntoDulce=puntoDulce;
+    }
+
+    public Pala(String nombre){ //Para la busqueda por nombre
+        this.nombre=nombre;
+    }
+
     public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, String ruta){
         this.nombre=nombre;
         this.forma=forma;
@@ -49,7 +63,7 @@ public class Pala {
         if(precio > 0)
             this.precio=precio;
         this.total = (potencia + control + salida + manejabilidad + puntoDulce)/5;
-        this.foto= ImagePanel.createImageIcon(ruta,nombre);
+        this.ruta=ruta;
     }
 
     public void setNombre(String nombre){
@@ -130,6 +144,10 @@ public class Pala {
 
     public javax.swing.ImageIcon getFoto(){
         return foto;
+    }
+
+    public String getRuta(){
+        return this.ruta;
     }
 
 }

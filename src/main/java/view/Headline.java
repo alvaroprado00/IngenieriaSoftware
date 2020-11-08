@@ -1,6 +1,9 @@
 package view;
 
 
+import model.Pala;
+import supportClass.Busqueda;
+
 import javax.swing.*;
 import java.awt.event.*;
 /**
@@ -100,7 +103,12 @@ public class Headline extends javax.swing.JPanel {
                 if(e.getKeyCode()==KeyEvent.VK_ENTER) {
                     if (!FilterWindow.ACTIVE){
                         frame.dispose();
-                        new FilterWindow(identified);
+                        FilterWindow ventana = new FilterWindow(identified);
+                        if(Busqueda.filtrarPalaNombre(new Pala(txtSearch.getText())).getNombre().equals("X")){
+                            //Sacar ventana no encontrado
+                        }else{
+                            ventana.cargarPala(Busqueda.filtrarPalaNombre(new Pala(txtSearch.getText())));
+                        }
                     }
                 }
             }

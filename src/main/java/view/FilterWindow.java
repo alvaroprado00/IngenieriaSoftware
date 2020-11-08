@@ -1,5 +1,7 @@
 package view;
 
+import model.Pala;
+import supportClass.Busqueda;
 import supportClass.SearchedPanel;
 
 import javax.swing.*;
@@ -66,12 +68,12 @@ public class FilterWindow extends javax.swing.JFrame {
         pnlHeadline = new javax.swing.JPanel();
 
         //para primera entrega
-        panelResultsHolder.setSize(panelResultsLayout.getWidth(), panelResultsHolder.getHeight());
+        /*panelResultsHolder.setSize(panelResultsLayout.getWidth(), panelResultsHolder.getHeight());
         ArrayList<SearchedPanel> paneles = new ArrayList<SearchedPanel>();
         for(int i=0;i<15;i++){
             paneles.add(new SearchedPanel());
         }
-        cargarPaneles(paneles);
+        cargarPaneles(paneles);*/
         //hasta aqui
 
         this.addWindowListener(new WindowListener() {
@@ -511,6 +513,31 @@ public class FilterWindow extends javax.swing.JFrame {
             }
         });
 
+        buttonFilter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panelResultsHolder.removeAll();
+                String forma = "";
+                if(boxPalaShape1.isSelected())
+                    forma = "lagrima";
+                else if(boxPalaShape2.isSelected())
+                    forma = "redonda";
+                else if(boxPalaShape3.isSelected())
+                    forma = "diamante";
+
+                if(forma.equals("")){
+                    //sacar ventana de introduzca la forma por favor
+                }else{
+                    Pala pala = new Pala(forma,sliderPotencia.getValue(),sliderControl.getValue(), sliderSalidaBola.getValue(), sliderManeja.getValue(), sliderPuntoDulce.getValue());
+                    if(Busqueda.filtrarPalaValores(pala).isEmpty()){
+                        //sacar ventana de no se encuentra nada
+                    }else{
+                        cargarPalas(Busqueda.filtrarPalaValores(pala));
+                    }
+                }
+            }
+        });
+
         pack();
         this.setTitle("Ventana de filtrado");
         this.setIconImage(new ImagePanel("/images/icon.png", "icono para ventana de pala concreta").getImageFromPanel());
@@ -564,15 +591,29 @@ public class FilterWindow extends javax.swing.JFrame {
 
 
     /** Esta es la funcion para cargar todos los resultados de la busqueda*/
-    public void cargarPanel(SearchedPanel panel){
-        panelResultsHolder.add(panel);
+    public void cargarPaneles(ArrayList<SearchedPanel> paneles){
+
+        for (SearchedPanel panel : paneles) panelResultsHolder.add(panel);
     }
 
-    public void cargarPaneles(ArrayList<SearchedPanel> paneles){
-        Iterator it = paneles.iterator();
+    public void cargarPalas(ArrayList<Pala> palas){
+        Iterator it = palas.iterator();
+        ArrayList<SearchedPanel> paneles = new ArrayList<SearchedPanel>();
 
-        while(it.hasNext())
-            panelResultsHolder.add((SearchedPanel) it.next());
+        while(it.hasNext()) {
+            paneles.add(new SearchedPanel((Pala) it.next()));
+        }
+        cargarPaneles(paneles);
+
+    }
+
+    public void cargarPala(Pala pala){
+        SearchedPanel panel = new SearchedPanel(pala);
+
+    }
+
+    public void cargarPanel(SearchedPanel panel){
+        panelResultsHolder.add(panel);
     }
 
 

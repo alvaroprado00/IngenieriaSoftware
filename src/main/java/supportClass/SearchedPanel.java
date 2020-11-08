@@ -14,7 +14,7 @@ import java.io.File;
 public class SearchedPanel extends JPanel {
     private JPanel panelImage;
     private JLabel labelName;
-    private Pala pala = new Pala("Royal Whip 2017","Redonda",20,20,20,20,20,20,"/images/Royal-Padel-Whip-Polietileno-2017.png");//esto es para la pala de la primera entrega tener una default que muestre
+    private Pala pala;
     private boolean identified;
 
     public SearchedPanel(Pala pala, boolean identified) {
@@ -42,6 +42,26 @@ public class SearchedPanel extends JPanel {
         this.setLayout(new BorderLayout());
         panelImage = new ImagePanel("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala");
         labelName = new JLabel("Royal Whip 2017");
+
+        labelName.setFont(new Font("Arial",0,10));
+        labelName.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+
+        panelImage.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.9)));
+        labelName.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.1)));
+
+        this.setPreferredSize(new Dimension(150,150));
+        this.add(panelImage, BorderLayout.CENTER);
+        this.add(labelName, BorderLayout.SOUTH);
+        this.setVisible(true);
+
+        initFunciones();
+    }
+
+    public SearchedPanel(Pala pala){
+        this.setLayout(new BorderLayout());
+        panelImage = new ImagePanel(pala.getRuta(), "Pala");
+        labelName = new JLabel(pala.getNombre());
+        this.pala=pala;
 
         labelName.setFont(new Font("Arial",0,10));
         labelName.setHorizontalAlignment((int) CENTER_ALIGNMENT);
