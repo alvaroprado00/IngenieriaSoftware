@@ -218,16 +218,28 @@ public class UserValidationUI extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void btnValidateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidateActionPerformed
-        UserController uc= new UserController();
-        identified= uc.identifyUser(Integer.parseInt(txtUser.getText()), String.valueOf(txtPassword.getPassword()));
 
-        if(identified){
-            javax.swing.JOptionPane.showMessageDialog(this, "Bienvenido: "+txtUser.getText());
-            this.dispose();
-            new Principal(true).setVisible(true);
-        }else{
-            javax.swing.JOptionPane.showMessageDialog(this, "El usuario NO existe");
+        try {
+            int userID = Integer.parseInt(txtUser.getText());
+            String password=String.valueOf(txtPassword.getPassword());
+
+            UserController uc=new UserController();
+            identified=uc.identifyUser(userID, password);
+            if(identified){
+                javax.swing.JOptionPane.showMessageDialog(this, "Bienvenido: "+txtUser.getText());
+                this.dispose();
+                new Principal(true).setVisible(true);
+            }else{
+                javax.swing.JOptionPane.showMessageDialog(this, "El usuario NO existe");
+            }
+
+        }catch(NumberFormatException nfe){
+            nfe.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "Introduzca un entero");
+        }catch(NullPointerException npe){
+            npe.printStackTrace();
         }
+
 
         //Dejamos los campos vacios para mayor facilidad a la hora de rellenar
 

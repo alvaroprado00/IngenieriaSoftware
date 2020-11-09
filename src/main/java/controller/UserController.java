@@ -1,5 +1,6 @@
 package controller;
 
+import exceptions.UserIDNotValidException;
 import model.User;
 
 import java.util.ArrayList;
@@ -28,22 +29,33 @@ public class UserController {
 
         //We create an instance of user with the info
 
-        User userToValidate= new User(userID, password);
+        boolean identifiedUser=false;
 
-        if(registeredUsers.contains(userToValidate)){
+        try{
+            User userToValidate= new User(userID, password);
+            if(registeredUsers.contains(userToValidate)){
 
-            return true;
-        }else{
-            return false;
+                identifiedUser= true;
+            }
+
+        }catch(UserIDNotValidException uIDnve){
+            System.out.println(uIDnve.getError());
         }
 
-
+        return identifiedUser;
     }
 
-   /* public boolean registerUser(int userID, String password){
+   public void registerUser(int userID, String password){
 
-    }
-*/
+       //We create an instance of user with the info
+
+       try {
+           User userToRegister = new User(userID, password);
+       }catch(UserIDNotValidException uIDnve){
+           System.out.println(uIDnve.getError());
+       }
+   }
+
     public void getRegisteredUsers(){
         registeredUsers=userReader.getRegisteredUsers();
     }

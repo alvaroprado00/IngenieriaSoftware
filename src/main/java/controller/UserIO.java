@@ -1,5 +1,6 @@
 package controller;
 
+import exceptions.UserIDNotValidException;
 import model.User;
 
 import java.io.BufferedReader;
@@ -54,7 +55,13 @@ public class UserIO {
                     int userID= Integer.parseInt(fields[0].trim());
                     String userPassword= fields[1].trim();
 
-                    registeredUsers.add(new User(userID, userPassword));
+                    try {
+                        User registeredUSer = new User(userID, userPassword);
+                        registeredUsers.add(new User(userID, userPassword));
+                    }catch (UserIDNotValidException nve){
+                        System.out.println(nve.getError());
+                    }
+
 
                 }catch (NumberFormatException nfe){
 

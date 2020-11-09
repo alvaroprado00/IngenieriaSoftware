@@ -5,6 +5,8 @@
  */
 package view;
 
+import controller.UserController;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -147,7 +149,22 @@ public class JRegisterWindow extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {
 
-        //
+        try {
+            int userID = Integer.parseInt(txtUser.getText());
+
+            if(String.valueOf(txtPassword.getText()).equals("")){
+                javax.swing.JOptionPane.showMessageDialog(this, "Rellene el campo contraseña");
+            }else {
+                String password = String.valueOf(txtPassword.getText());
+                UserController uc=new UserController();
+                uc.registerUser(userID, password);
+            }
+
+        }catch(NumberFormatException nfe){
+            javax.swing.JOptionPane.showMessageDialog(this, "Introduzca un entero");
+        }
+
+
     }
 
 

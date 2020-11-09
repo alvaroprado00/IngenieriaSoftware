@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.UserIDNotValidException;
+
 /**
  * Clase creada para identificar a los usuarios de la aplicación
  *
@@ -12,23 +14,28 @@ public class User {
     private int userID; //identificador unico de 8 digitos
     private String password;
 
-    public User(int userID, String password){
+    public User(int userID, String password) throws UserIDNotValidException {
 
-        this.userID=userID;
-        this.password=password;
+        this.setID(userID);
+        this.setPassword(password);
     }
 
     //Methods
 
-    void setID(int userID){
-        this.userID=userID;
+    private void setID(int userID) throws UserIDNotValidException{
+
+        if(String.valueOf(userID).length()==8){
+            this.userID=userID;
+        }else{
+         throw new UserIDNotValidException("El ID debe tener 8 digitos");
+        }
     }
 
-    void setPassword(String password){
+    private void setPassword(String password){
         this.password=password;
     }
 
-   public int getID(){
+    public int getID(){
         return this.userID;
     }
 
