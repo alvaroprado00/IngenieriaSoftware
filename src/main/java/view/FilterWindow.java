@@ -526,11 +526,11 @@ public class FilterWindow extends javax.swing.JFrame {
                     forma = "diamante";
 
                 if(forma.equals("")){
-                    //sacar ventana de introduzca la forma por favor
+                    botonFiltroMensaje("Introduzca la forma deseada de pala");
                 }else{
                     Pala pala = new Pala(forma,sliderPotencia.getValue(),sliderControl.getValue(), sliderSalidaBola.getValue(), sliderManeja.getValue(), sliderPuntoDulce.getValue());
                     if(Busqueda.filtrarPalaValores(pala).isEmpty()){
-                        //sacar ventana de no se encuentra nada
+                        botonFiltroMensaje("No se ha encontrado ninguna pala con los valores deseados");
                     }else{
                         cargarPalas(Busqueda.filtrarPalaValores(pala));
                     }
@@ -610,6 +610,10 @@ public class FilterWindow extends javax.swing.JFrame {
     public void cargarPala(Pala pala){
         SearchedPanel panel = new SearchedPanel(pala);
 
+    }
+
+    private void botonFiltroMensaje(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog( this,mensaje);
     }
 
     public void cargarPanel(SearchedPanel panel){

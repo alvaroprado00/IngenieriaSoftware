@@ -105,7 +105,7 @@ public class Headline extends javax.swing.JPanel {
                         frame.dispose();
                         FilterWindow ventana = new FilterWindow(identified);
                         if(Busqueda.filtrarPalaNombre(new Pala(txtSearch.getText())).getNombre().equals("X")){
-                            //Sacar ventana no encontrado
+                            javax.swing.JOptionPane.showMessageDialog(ventana, "El nombre no coincide");
                         }else{
                             ventana.cargarPala(Busqueda.filtrarPalaNombre(new Pala(txtSearch.getText())));
                         }
