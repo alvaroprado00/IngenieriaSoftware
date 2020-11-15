@@ -25,7 +25,7 @@ public class Pala {
     //private String ruta;
     private String base64Image;
 
-    public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, File ficheroFoto){
+    /*public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, File ficheroFoto){
         setNombre(nombre);
         setForma(forma);
         setPotencia(potencia);
@@ -38,7 +38,7 @@ public class Pala {
         this.setTotal();
         this.setFicheroFoto(ficheroFoto);
         this.foto= ImagePanel.createImageIcon(ficheroFoto.getPath(),nombre);
-    }
+    }*/
 
     public Pala(String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce){ //Para la busqueda de la pala por valores
         this.forma=forma;
