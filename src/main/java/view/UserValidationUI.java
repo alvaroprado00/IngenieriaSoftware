@@ -1,8 +1,13 @@
 package view;
 
+import client.Client;
 import controller.UserController;
+import exceptions.UserIDNotValidException;
+import model.User;
 
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -223,8 +228,19 @@ public class UserValidationUI extends javax.swing.JFrame {
             int userID = Integer.parseInt(txtUser.getText());
             String password=String.valueOf(txtPassword.getPassword());
 
-            UserController uc=new UserController();
-            identified=uc.identifyUser(userID, password);
+            User user = new User(userID,password);
+
+            ArrayList<User> lista = Client.userRequest();
+            Iterator<User> it =lista.iterator();
+
+            boolean identified = false;
+            while(it.hasNext()){
+                User userActual = it.next();
+                if(userActual.equals(user)){
+                    identified = true;
+
+                }
+            }
             if(identified){
                 javax.swing.JOptionPane.showMessageDialog(this, "Bienvenido: "+txtUser.getText());
                 this.dispose();
@@ -233,11 +249,24 @@ public class UserValidationUI extends javax.swing.JFrame {
                 javax.swing.JOptionPane.showMessageDialog(this, "El usuario NO existe");
             }
 
+            /*
+            UserController uc=new UserController();
+            identified=uc.identifyUser(userID, password);
+            if(identified){
+                javax.swing.JOptionPane.showMessageDialog(this, "Bienvenido: "+txtUser.getText());
+                this.dispose();
+                new Principal(true).setVisible(true);
+            }else{
+                javax.swing.JOptionPane.showMessageDialog(this, "El usuario NO existe");
+            }*/
+
         }catch(NumberFormatException nfe){
             nfe.printStackTrace();
             javax.swing.JOptionPane.showMessageDialog(this, "Introduzca un entero");
         }catch(NullPointerException npe){
             npe.printStackTrace();
+        } catch (UserIDNotValidException e) {
+            e.printStackTrace();
         }
 
 

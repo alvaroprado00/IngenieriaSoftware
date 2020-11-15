@@ -25,7 +25,7 @@ public class UserController {
         registeredUsers= new ArrayList<>();
         userReader=new UserIO();
 
-        registeredUsers = Client.userRequest();
+        registeredUsers = null;
         //this.getUser(registeredUsers);
     }
 

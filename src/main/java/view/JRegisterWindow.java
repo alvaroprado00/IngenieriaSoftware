@@ -159,11 +159,14 @@ public class JRegisterWindow extends javax.swing.JFrame {
                 javax.swing.JOptionPane.showMessageDialog(this, "Rellene el campo contraseña");
             }else {
                 String password = String.valueOf(txtPassword.getText());
-                Client.newUser(new User(userID,password));
+                User user = new User(userID,password);
+                Client.newUser(user);
+                this.dispose();
             }
 
         }catch(NumberFormatException | UserIDNotValidException nfe){
             javax.swing.JOptionPane.showMessageDialog(this, "Introduzca un entero");
+            nfe.printStackTrace();
         }
 
 

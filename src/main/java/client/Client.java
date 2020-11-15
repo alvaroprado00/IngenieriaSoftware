@@ -87,7 +87,7 @@ public class Client {
         Logger.getRootLogger().info("Host: "+host+" port"+port);
 
         HashMap<String,Object> session=new HashMap<String, Object>();
-        //session.put("/getCustomer","");
+        session.put("/newCustomer",user);
 
         Message mensajeEnvio=new Message();
         Message mensajeVuelta=new Message();
@@ -97,7 +97,7 @@ public class Client {
 
 
         switch (mensajeVuelta.getContext()) {
-            case "/netCustomerResponse":
+            case "/newCustomerResponse":
                 System.out.println("Usuario agregado");
                 break;
 
@@ -187,6 +187,7 @@ public class Client {
                 System.err.println("Unknown host: " + host);
                 System.exit(1);
             } catch (IOException e) {
+                e.printStackTrace();
                 System.err.println("Unable to get streams from server");
                 System.exit(1);
             }

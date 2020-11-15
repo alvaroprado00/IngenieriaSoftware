@@ -520,11 +520,11 @@ public class FilterWindow extends javax.swing.JFrame {
                 panelResultsHolder.removeAll();
                 String forma = "";
                 if(boxPalaShape1.isSelected())
-                    forma = "lagrima";
+                    forma = "Lagrima";
                 else if(boxPalaShape2.isSelected())
-                    forma = "redonda";
+                    forma = "Redonda";
                 else if(boxPalaShape3.isSelected())
-                    forma = "diamante";
+                    forma = "Diamante";
 
                 if(forma.equals("")){
                     botonFiltroMensaje("Introduzca la forma deseada de pala");

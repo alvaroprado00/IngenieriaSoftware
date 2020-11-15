@@ -16,6 +16,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Base64;
 
 
 /**
@@ -152,7 +157,11 @@ public class JUpload extends javax.swing.JFrame {
         btnFin.setText("Subir");
         btnFin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFinActionPerformed(evt);
+                try {
+                    btnFinActionPerformed(evt);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -458,9 +467,28 @@ public class JUpload extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPuntoDulceActionPerformed
 
 
-    private void btnFinActionPerformed(java.awt.event.ActionEvent evt){
-        pala = new Pala(lblNombre.getText(), (String) comboForma.getSelectedItem(),Integer.parseInt(txtPotencia.getText()),Integer.parseInt(txtControl.getText()),Integer.parseInt(txtSalida.getText()),Integer.parseInt(txtManejabilidad.getText()),
-                Integer.parseInt(txtPuntoDulce.getText()),Double.parseDouble(txtPrecio.getText()),jFileChooser.getSelectedFile().getPath());
+    private void btnFinActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
+
+        File file = jFileChooser.getSelectedFile();
+        byte[] buffer = new byte[(int) file.length()];
+        InputStream ios = null;
+        try {
+            ios = new FileInputStream(file);
+            if (ios.read(buffer) == -1) {
+                throw new IOException(
+                        "EOF reached while trying to read the whole file");
+            }
+        } finally {
+            try {
+                if (ios != null)
+                    ios.close();
+            } catch (IOException e) {
+            }
+        }
+        String base64Image = Base64.getEncoder().encodeToString(buffer);
+
+        pala = new Pala(txtNombre.getText(), (String) comboForma.getSelectedItem(),Integer.parseInt(txtPotencia.getText()),Integer.parseInt(txtControl.getText()),Integer.parseInt(txtSalida.getText()),Integer.parseInt(txtManejabilidad.getText()),
+                Integer.parseInt(txtPuntoDulce.getText()),Double.parseDouble(txtPrecio.getText()),base64Image);
         Client.savePala(pala);
 
 

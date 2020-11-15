@@ -52,8 +52,8 @@ public class SocketServer extends Thread {
 
                 case "/newCustomer":
                     UserController uc2 = new UserController();
-                    uc2.saveUser((User)mensajeIn.getSession().get("/newUser"));
-                    mensajeOut.setContext("/newUser");
+                    uc2.saveUser((User)mensajeIn.getSession().get("/newCustomer"));
+                    mensajeOut.setContext("/newCustomerResponse");
                     mensajeOut.setSession(null);
                     objectOutputStream.writeObject(mensajeOut);
                     break;
@@ -112,6 +112,7 @@ public class SocketServer extends Thread {
 
         } catch (IOException ex) {
             System.out.println("Unable to get streams from client");
+            ex.printStackTrace();
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -58,7 +58,7 @@ public class PalaDAO {
             int longitud = (int)file.length();
             FileInputStream fis = new FileInputStream(file);*/
 
-            String sql="INSERT INTO palas(nombre,forma,potencia,control,salida,manejabilidad,puntoDulce,precio,foto)"+"VALUES(?,?,?,?,?,?,?,?,?)";
+            String sql="INSERT INTO palas(nombre,forma,potencia,control,salida,manejabilidad,puntodulce,precio,foto)"+"VALUES(?,?,?,?,?,?,?,?,?)";
 
             PreparedStatement ps= con.prepareStatement(sql);
 

@@ -1,6 +1,7 @@
 package model;
 
 import view.ImagePanel;
+import java.io.Serializable;
 
 import java.io.File;
 
@@ -9,7 +10,7 @@ import java.io.File;
  *
  * @author Ignacio Lopez
  */
-public class Pala {
+public class Pala implements Serializable{
 
     private String nombre; //Todos los atributos que tiene una pala
     private String forma;
