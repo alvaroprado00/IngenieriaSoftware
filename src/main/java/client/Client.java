@@ -82,6 +82,32 @@ public class Client {
         }
 
     }
+
+    public static void newUser(User user){
+        Logger.getRootLogger().info("Host: "+host+" port"+port);
+
+        HashMap<String,Object> session=new HashMap<String, Object>();
+        //session.put("/getCustomer","");
+
+        Message mensajeEnvio=new Message();
+        Message mensajeVuelta=new Message();
+        mensajeEnvio.setContext("/newCustomer");
+        mensajeEnvio.setSession(session);
+        Client.sent(mensajeEnvio,mensajeVuelta);
+
+
+        switch (mensajeVuelta.getContext()) {
+            case "/netCustomerResponse":
+                System.out.println("Usuario agregado");
+                break;
+
+            default:
+                Logger.getRootLogger().info("Option not found");
+                System.out.println("\nError a la vuelta");
+                break;
+
+        }
+    }
     public static ArrayList<Pala> palaRequest(){
 
         Logger.getRootLogger().info("Host: "+host+" port"+port);

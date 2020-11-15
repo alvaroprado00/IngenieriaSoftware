@@ -5,5 +5,5 @@
     <entry key="ddbb.user">postgres</entry>
     <entry key="ddbb.password">isw2020</entry>
     <entry key="host">127.0.0.1</entry>
-    <entry key="port"></entry>
+    <entry key="port">5432</entry>
 </properties>

@@ -5,7 +5,10 @@
  */
 package view;
 
+import client.Client;
 import controller.UserController;
+import exceptions.UserIDNotValidException;
+import model.User;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -156,11 +159,10 @@ public class JRegisterWindow extends javax.swing.JFrame {
                 javax.swing.JOptionPane.showMessageDialog(this, "Rellene el campo contraseña");
             }else {
                 String password = String.valueOf(txtPassword.getText());
-                UserController uc=new UserController();
-                uc.registerUser(userID, password);
+                Client.newUser(new User(userID,password));
             }
 
-        }catch(NumberFormatException nfe){
+        }catch(NumberFormatException | UserIDNotValidException nfe){
             javax.swing.JOptionPane.showMessageDialog(this, "Introduzca un entero");
         }
 

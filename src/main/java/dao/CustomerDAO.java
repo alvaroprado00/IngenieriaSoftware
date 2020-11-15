@@ -28,6 +28,25 @@ public class CustomerDAO {
         }
     }
 
+    public static void saveCliente(User user){
+        Connection con=ConnectionDAO.getInstance().getConnection();
+        try{
+            String sql = "INSERT INTO users(id,password)"+"VALUES(?,?)";
+
+            PreparedStatement ps= con.prepareStatement(sql);
+
+            ps.setInt(1,user.getID());
+            ps.setString(2,user.getPassword());
+
+            int retorno = ps.executeUpdate();
+            ps.close();
+
+        } catch (SQLException ex) {
+
+            System.out.println(ex.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
 
 

@@ -55,6 +55,7 @@ public class UserController {
 
        try {
            User userToRegister = new User(userID, password);
+           Client.newUser(userToRegister);
        }catch(UserIDNotValidException uIDnve){
            System.out.println(uIDnve.getError());
        }
@@ -65,4 +66,7 @@ public class UserController {
     public void getUser(ArrayList<User> lista) {
         CustomerDAO.getClientes(lista);
     }
+
+    public void saveUser(User user){ CustomerDAO.saveCliente(user);}
+
 }

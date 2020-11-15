@@ -17,7 +17,7 @@ public class PalaDAO {
 
     public static void getPalas(ArrayList<Pala> lista) {
         Connection con = ConnectionDAO.getInstance().getConnection();
-        try (PreparedStatement pst = con.prepareStatement("SELECT * FROM users");
+        try (PreparedStatement pst = con.prepareStatement("SELECT * FROM palas");
              ResultSet rs = pst.executeQuery()) {
 
             while (rs.next()) {

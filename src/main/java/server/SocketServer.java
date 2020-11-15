@@ -50,6 +50,14 @@ public class SocketServer extends Thread {
                     objectOutputStream.writeObject(mensajeOut);
                     break;
 
+                case "/newCustomer":
+                    UserController uc2 = new UserController();
+                    uc2.saveUser((User)mensajeIn.getSession().get("/newUser"));
+                    mensajeOut.setContext("/newUser");
+                    mensajeOut.setSession(null);
+                    objectOutputStream.writeObject(mensajeOut);
+                    break;
+
                 case "/getPala":
                     PalaController pc=new PalaController();
                     ArrayList<Pala> list=new ArrayList<Pala>();
