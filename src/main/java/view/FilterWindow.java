@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -532,7 +533,11 @@ public class FilterWindow extends javax.swing.JFrame {
                     if(Busqueda.filtrarPalaValores(pala).isEmpty()){
                         botonFiltroMensaje("No se ha encontrado ninguna pala con los valores deseados");
                     }else{
-                        cargarPalas(Busqueda.filtrarPalaValores(pala));
+                        try {
+                            cargarPalas(Busqueda.filtrarPalaValores(pala));
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        }
                     }
                 }
             }
@@ -596,7 +601,7 @@ public class FilterWindow extends javax.swing.JFrame {
         for (SearchedPanel panel : paneles) panelResultsHolder.add(panel);
     }
 
-    public void cargarPalas(ArrayList<Pala> palas){
+    public void cargarPalas(ArrayList<Pala> palas) throws IOException {
         Iterator it = palas.iterator();
         ArrayList<SearchedPanel> paneles = new ArrayList<SearchedPanel>();
 
@@ -607,7 +612,7 @@ public class FilterWindow extends javax.swing.JFrame {
 
     }
 
-    public void cargarPala(Pala pala){
+    public void cargarPala(Pala pala) throws IOException {
         SearchedPanel panel = new SearchedPanel(pala);
 
     }

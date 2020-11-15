@@ -5,6 +5,7 @@
  */
 
 package view;
+import client.Client;
 import model.Pala;
 
 import javax.swing.*;
@@ -460,6 +461,7 @@ public class JUpload extends javax.swing.JFrame {
     private void btnFinActionPerformed(java.awt.event.ActionEvent evt){
         pala = new Pala(lblNombre.getText(), (String) comboForma.getSelectedItem(),Integer.parseInt(txtPotencia.getText()),Integer.parseInt(txtControl.getText()),Integer.parseInt(txtSalida.getText()),Integer.parseInt(txtManejabilidad.getText()),
                 Integer.parseInt(txtPuntoDulce.getText()),Double.parseDouble(txtPrecio.getText()),jFileChooser.getSelectedFile().getPath());
+        Client.savePala(pala);
 
 
         new Principal(true).setVisible((boolean)true);

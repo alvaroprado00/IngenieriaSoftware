@@ -1,5 +1,7 @@
 package controller;
 
+import client.Client;
+import dao.CustomerDAO;
 import exceptions.UserIDNotValidException;
 import model.User;
 
@@ -22,7 +24,9 @@ public class UserController {
     public UserController(){
         registeredUsers= new ArrayList<>();
         userReader=new UserIO();
-        this.getRegisteredUsers();
+
+        registeredUsers = Client.userRequest();
+        //this.getUser(registeredUsers);
     }
 
     public boolean identifyUser(int userID, String password){
@@ -56,7 +60,9 @@ public class UserController {
        }
    }
 
-    public void getRegisteredUsers(){
-        registeredUsers=userReader.getRegisteredUsers();
+   //public void getRegisteredUsers(){ CustomerDAO.getClientes(registeredUsers);}
+
+    public void getUser(ArrayList<User> lista) {
+        CustomerDAO.getClientes(lista);
     }
 }

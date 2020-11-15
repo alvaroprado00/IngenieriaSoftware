@@ -6,6 +6,8 @@ import supportClass.Busqueda;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.IOException;
+
 /**
  *
  * @author Jaime
@@ -107,7 +109,11 @@ public class Headline extends javax.swing.JPanel {
                         if(Busqueda.filtrarPalaNombre(new Pala(txtSearch.getText())).getNombre().equals("X")){
                             javax.swing.JOptionPane.showMessageDialog(ventana, "El nombre no coincide");
                         }else{
-                            ventana.cargarPala(Busqueda.filtrarPalaNombre(new Pala(txtSearch.getText())));
+                            try {
+                                ventana.cargarPala(Busqueda.filtrarPalaNombre(new Pala(txtSearch.getText())));
+                            } catch (IOException ioException) {
+                                ioException.printStackTrace();
+                            }
                         }
                     }
                 }

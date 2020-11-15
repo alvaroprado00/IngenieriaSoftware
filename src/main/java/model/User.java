@@ -1,6 +1,8 @@
 package model;
 
 import exceptions.UserIDNotValidException;
+import java.io.Serializable;
+
 
 /**
  * Clase creada para identificar a los usuarios de la aplicación
@@ -10,7 +12,7 @@ import exceptions.UserIDNotValidException;
 public class User {
 
     //Attributes
-
+    private static final long serialVersionUID = 1L;
     private int userID; //identificador unico de 8 digitos
     private String password;
 

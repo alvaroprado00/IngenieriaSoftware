@@ -1,5 +1,6 @@
 package supportClass;
 
+import client.Client;
 import model.Pala;
 
 import java.util.ArrayList;
@@ -42,6 +43,6 @@ public class Busqueda {
     }
 
     public static ArrayList<Pala> getTodasPalas() { //Esto cuando tengamos una base de datos o como lo guardemos
-        return null;
+        return Client.palaRequest();
     }
 }

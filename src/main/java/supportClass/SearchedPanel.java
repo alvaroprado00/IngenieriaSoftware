@@ -1,9 +1,15 @@
 package supportClass;
 
 import model.Pala;
+
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.Base64;
 import view.JPala;
 import view.ImagePanel;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -57,9 +63,11 @@ public class SearchedPanel extends JPanel {
         initFunciones();
     }
 
-    public SearchedPanel(Pala pala){
+    public SearchedPanel(Pala pala) throws IOException {
         this.setLayout(new BorderLayout());
-        panelImage = new ImagePanel(pala.getRuta(), "Pala");
+        byte[] btDataFile = Base64.getDecoder().decode(pala.getBase64Image());
+        BufferedImage image = ImageIO.read(new ByteArrayInputStream(btDataFile));
+        panelImage = new ImagePanel(new ImageIcon(image));
         labelName = new JLabel(pala.getNombre());
         this.pala=pala;
 

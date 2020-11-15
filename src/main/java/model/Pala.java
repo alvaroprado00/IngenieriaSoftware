@@ -22,7 +22,8 @@ public class Pala {
     private double precio;
     private javax.swing.ImageIcon foto;
     private File ficheroFoto;
-    private String ruta;
+    //private String ruta;
+    private String base64Image;
 
     public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, File ficheroFoto){
         setNombre(nombre);
@@ -52,7 +53,7 @@ public class Pala {
         this.nombre=nombre;
     }
 
-    public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, String ruta){
+    public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, String base64Image){
         this.nombre=nombre;
         this.forma=forma;
         this.potencia=potencia;
@@ -63,8 +64,10 @@ public class Pala {
         if(precio > 0)
             this.precio=precio;
         this.total = (potencia + control + salida + manejabilidad + puntoDulce)/5;
-        this.ruta=ruta;
+        //this.ruta=ruta;
+        this.base64Image=base64Image;
     }
+
 
     public void setNombre(String nombre){
         this.nombre=nombre;
@@ -106,6 +109,7 @@ public class Pala {
     public void setFicheroFoto(File ficheroFoto){
         this.ficheroFoto=ficheroFoto;
     }
+
     public String getNombre() {
         return nombre;
     }
@@ -146,8 +150,10 @@ public class Pala {
         return foto;
     }
 
-    public String getRuta(){
-        return this.ruta;
-    }
+    //public String getRuta(){  return this.ruta; }
+
+    public String getBase64Image(){ return this.base64Image;}
+
+    public void setBase64Image(String base64Image){ this.base64Image = base64Image;}
 
 }
