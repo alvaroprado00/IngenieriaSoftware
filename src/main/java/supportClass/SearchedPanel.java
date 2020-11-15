@@ -18,69 +18,32 @@ import java.awt.event.MouseListener;
 import java.io.File;
 
 public class SearchedPanel extends JPanel {
-    private JPanel panelImage;
+    private JLabel labelImage;
     private JLabel labelName;
     private Pala pala;
     private boolean identified;
 
-    public SearchedPanel(Pala pala, boolean identified) {
-
-        this.pala = pala;
-        this.setLayout(new BorderLayout());
-
-        this. identified = identified;
-
-        panelImage = new ImagePanel(pala.getFoto());
-        labelName = new JLabel(pala.getNombre());
-
-        //this.add(panelImage, BorderLayout.NORTH);
-        this.add(labelName, BorderLayout.SOUTH);
-        this.setVisible(true);
-
-        initFunciones();
-    }
-
-    /**
-     * Esto es solo para la primera entrega que meta un panel
-     */
-    public SearchedPanel() {
-
-        this.setLayout(new BorderLayout());
-        panelImage = new ImagePanel("/images/Royal-Padel-Whip-Polietileno-2017.png", "Pala");
-        labelName = new JLabel("Royal Whip 2017");
-
-        labelName.setFont(new Font("Arial",0,10));
-        labelName.setHorizontalAlignment((int) CENTER_ALIGNMENT);
-
-        panelImage.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.9)));
-        labelName.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.1)));
-
-        this.setPreferredSize(new Dimension(150,150));
-        this.add(panelImage, BorderLayout.CENTER);
-        this.add(labelName, BorderLayout.SOUTH);
-        this.setVisible(true);
-
-        initFunciones();
-    }
-
     public SearchedPanel(Pala pala) throws IOException {
         this.setLayout(new BorderLayout());
+
         byte[] btDataFile = Base64.getDecoder().decode(pala.getBase64Image());
         BufferedImage image = ImageIO.read(new ByteArrayInputStream(btDataFile));
-        panelImage = new ImagePanel(new ImageIcon(image));
+        labelImage = new JLabel(new ImageIcon(btDataFile));
         labelName = new JLabel(pala.getNombre());
         this.pala=pala;
 
         labelName.setFont(new Font("Arial",0,10));
         labelName.setHorizontalAlignment((int) CENTER_ALIGNMENT);
 
-        panelImage.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.9)));
+        //labelImage.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.9)));
         labelName.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.1)));
 
-        this.setPreferredSize(new Dimension(150,150));
-        this.add(panelImage, BorderLayout.CENTER);
+        //this.setPreferredSize(new Dimension(150,150));
+        this.add(labelImage, BorderLayout.CENTER);
         this.add(labelName, BorderLayout.SOUTH);
         this.setVisible(true);
+
+        this.identified=identified;
 
         initFunciones();
     }
@@ -96,7 +59,7 @@ public class SearchedPanel extends JPanel {
         };
 
 
-        panelImage.addMouseListener(ml);
+        labelImage.addMouseListener(ml);
         labelName.addMouseListener(ml);
 
     }

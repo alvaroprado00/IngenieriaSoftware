@@ -21,25 +21,7 @@ public class Pala implements Serializable{
     private int puntoDulce;
     private int total;
     private double precio;
-    private javax.swing.ImageIcon foto;
-    private File ficheroFoto;
-    //private String ruta;
     private String base64Image;
-
-    /*public Pala(String nombre,String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce,double precio, File ficheroFoto){
-        setNombre(nombre);
-        setForma(forma);
-        setPotencia(potencia);
-        setControl(control);
-        setSalida(salida);
-        setManejabilidad(manejabilidad);
-        setPuntoDulce(puntoDulce);
-        if(precio > 0)
-            this.precio=precio;
-        this.setTotal();
-        this.setFicheroFoto(ficheroFoto);
-        this.foto= ImagePanel.createImageIcon(ficheroFoto.getPath(),nombre);
-    }*/
 
     public Pala(String forma,int potencia,int control,int salida, int manejabilidad,int puntoDulce){ //Para la busqueda de la pala por valores
         this.forma=forma;
@@ -107,10 +89,6 @@ public class Pala implements Serializable{
         this.total=(potencia + control + salida + manejabilidad + puntoDulce)/5;
     }
 
-    public void setFicheroFoto(File ficheroFoto){
-        this.ficheroFoto=ficheroFoto;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -147,14 +125,13 @@ public class Pala implements Serializable{
         return precio;
     }
 
-    public javax.swing.ImageIcon getFoto(){
-        return foto;
-    }
-
-    //public String getRuta(){  return this.ruta; }
-
     public String getBase64Image(){ return this.base64Image;}
 
     public void setBase64Image(String base64Image){ this.base64Image = base64Image;}
+
+    public String toString(){
+        return "Nombre: " + this.getNombre() + ", forma: " + this.getForma() + ", potencia:" +this.getPotencia() + ", control: "+ this.getControl()+ ", salida: " + this.getSalida() + ", maeja: " + this.getManejabilidad() +
+        ", puntodulce: " + this.getPuntoDulce()+ ", precio: " + this.getPrecio();
+    }
 
 }

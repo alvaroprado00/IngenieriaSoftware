@@ -1,5 +1,9 @@
 package view;
 import model.Pala;
+
+import javax.swing.*;
+import java.util.Base64;
+
 /**
  * Ventana para visualizar una pala concreta
  * @author Ignacio Lopez
@@ -7,7 +11,7 @@ import model.Pala;
 public class JPala extends javax.swing.JFrame {
 
     private Pala pala;
-    private ImagePanel pnlPalas;
+    private JLabel labelPalas;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtForma;
     private javax.swing.JTextField txtPotencia;
@@ -30,7 +34,7 @@ public class JPala extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        pnlPalas = new ImagePanel(pala.getFoto());
+        labelPalas = new JLabel(new ImageIcon(Base64.getDecoder().decode(pala.getBase64Image())));
         txtNombre = new javax.swing.JTextField();
         txtForma = new javax.swing.JTextField();
         txtPotencia = new javax.swing.JTextField();
@@ -43,9 +47,6 @@ public class JPala extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-
-
-        //lblFoto.setIcon(pala.getFoto());
 
         txtNombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -91,7 +92,7 @@ public class JPala extends javax.swing.JFrame {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE) //addContainerGap()
-                                .addComponent(pnlPalas, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelPalas, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
@@ -128,7 +129,7 @@ public class JPala extends javax.swing.JFrame {
                                                 .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(pnlPalas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(labelPalas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(37, 37, Short.MAX_VALUE))
         );
 

@@ -406,6 +406,13 @@ public class FilterWindow extends javax.swing.JFrame {
                     .addComponent(panelFiltros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        textPotenciaValue.setText("50");
+        textControlValue.setText("50");
+        textManejaValue.setText("50");
+        textSalidaBolaValue.setText("50");
+        textPuntoDulceValue.setText("50");
+
+
 
         sliderPotencia.addChangeListener(new ChangeListener() {
             @Override
@@ -530,11 +537,12 @@ public class FilterWindow extends javax.swing.JFrame {
                     botonFiltroMensaje("Introduzca la forma deseada de pala");
                 }else{
                     Pala pala = new Pala(forma,sliderPotencia.getValue(),sliderControl.getValue(), sliderSalidaBola.getValue(), sliderManeja.getValue(), sliderPuntoDulce.getValue());
-                    if(Busqueda.filtrarPalaValores(pala).isEmpty()){
+                    ArrayList<Pala> resultado = Busqueda.filtrarPalaValores(pala);
+                    if(resultado.isEmpty()){
                         botonFiltroMensaje("No se ha encontrado ninguna pala con los valores deseados");
                     }else{
                         try {
-                            cargarPalas(Busqueda.filtrarPalaValores(pala));
+                            cargarPalas(resultado);
                         } catch (IOException ioException) {
                             ioException.printStackTrace();
                         }
