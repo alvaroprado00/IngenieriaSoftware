@@ -11,7 +11,7 @@ import java.util.Base64;
 public class JPala extends javax.swing.JFrame {
 
     private Pala pala;
-    private JLabel labelPalas;
+    private ImagePanel panelPalas;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtForma;
     private javax.swing.JTextField txtPotencia;
@@ -34,7 +34,7 @@ public class JPala extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        labelPalas = new JLabel(new ImageIcon(Base64.getDecoder().decode(pala.getBase64Image())));
+        panelPalas = new ImagePanel(new ImageIcon(Base64.getDecoder().decode(pala.getBase64Image())));
         txtNombre = new javax.swing.JTextField();
         txtForma = new javax.swing.JTextField();
         txtPotencia = new javax.swing.JTextField();
@@ -92,7 +92,7 @@ public class JPala extends javax.swing.JFrame {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE) //addContainerGap()
-                                .addComponent(labelPalas, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(panelPalas, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
@@ -129,7 +129,7 @@ public class JPala extends javax.swing.JFrame {
                                                 .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(labelPalas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(panelPalas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(37, 37, Short.MAX_VALUE))
         );
 

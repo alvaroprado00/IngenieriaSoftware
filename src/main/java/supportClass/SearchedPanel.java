@@ -15,10 +15,9 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.File;
 
 public class SearchedPanel extends JPanel {
-    private JLabel labelImage;
+    private ImagePanel panelImage;
     private JLabel labelName;
     private Pala pala;
     private boolean identified;
@@ -27,19 +26,19 @@ public class SearchedPanel extends JPanel {
         this.setLayout(new BorderLayout());
 
         byte[] btDataFile = Base64.getDecoder().decode(pala.getBase64Image());
-        BufferedImage image = ImageIO.read(new ByteArrayInputStream(btDataFile));
-        labelImage = new JLabel(new ImageIcon(btDataFile));
+        Image image = ImageIO.read(new ByteArrayInputStream(btDataFile));
+        panelImage = new ImagePanel(new ImageIcon(image));
         labelName = new JLabel(pala.getNombre());
         this.pala=pala;
 
         labelName.setFont(new Font("Arial",0,10));
         labelName.setHorizontalAlignment((int) CENTER_ALIGNMENT);
 
-        //labelImage.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.9)));
+        panelImage.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.9)));
         labelName.setSize(new Dimension(this.getWidth(), (int) (this.getHeight()*0.1)));
 
-        //this.setPreferredSize(new Dimension(150,150));
-        this.add(labelImage, BorderLayout.CENTER);
+        this.setPreferredSize(new Dimension(150,150));
+        this.add(panelImage, BorderLayout.CENTER);
         this.add(labelName, BorderLayout.SOUTH);
         this.setVisible(true);
 
@@ -59,7 +58,7 @@ public class SearchedPanel extends JPanel {
         };
 
 
-        labelImage.addMouseListener(ml);
+        panelImage.addMouseListener(ml);
         labelName.addMouseListener(ml);
 
     }
