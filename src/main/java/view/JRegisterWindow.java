@@ -6,7 +6,6 @@
 package view;
 
 import client.Client;
-import controller.UserController;
 import exceptions.UserIDNotValidException;
 import model.User;
 
@@ -154,19 +153,28 @@ public class JRegisterWindow extends javax.swing.JFrame {
 
         try {
             int userID = Integer.parseInt(txtUser.getText());
+            String password = String.valueOf(txtPassword.getText());
 
             if(String.valueOf(txtPassword.getText()).equals("")){
                 javax.swing.JOptionPane.showMessageDialog(this, "Rellene el campo contraseña");
             }else {
-                String password = String.valueOf(txtPassword.getText());
+
                 User user = new User(userID,password);
-                Client.newUser(user);
+                if(Client.newUser(user)){
+                    javax.swing.JOptionPane.showMessageDialog(this, "Usted ha sido añadido a la BBDD como nuevo usuario");
+                }else{
+                    javax.swing.JOptionPane.showMessageDialog(this, "Error añadir nuevo usuario");
+
+                }
                 this.dispose();
             }
 
-        }catch(NumberFormatException | UserIDNotValidException nfe){
+        }catch(NumberFormatException nfe){
             javax.swing.JOptionPane.showMessageDialog(this, "Introduzca un entero");
             nfe.printStackTrace();
+        }catch (UserIDNotValidException uIDnv){
+            javax.swing.JOptionPane.showMessageDialog(this, "Introduzca un numero de 8 digitos");
+            uIDnv.printStackTrace();
         }
 
 

@@ -9,6 +9,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import org.apache.log4j.Logger;
 
@@ -83,7 +84,10 @@ public class Client {
 
     }
 
-    public static void newUser(User user){
+    public static boolean newUser(User user){
+
+        boolean userAdded=false;
+
         Logger.getRootLogger().info("Host: "+host+" port"+port);
 
         HashMap<String,Object> session=new HashMap<String, Object>();
@@ -99,6 +103,7 @@ public class Client {
         switch (mensajeVuelta.getContext()) {
             case "/newCustomerResponse":
                 System.out.println("Usuario agregado");
+                userAdded=true;
                 break;
 
             default:
@@ -107,6 +112,8 @@ public class Client {
                 break;
 
         }
+
+        return userAdded;
     }
     public static ArrayList<Pala> palaRequest(){
 
@@ -199,5 +206,27 @@ public class Client {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+    public static boolean isUserRegistered(User userToValidate){
+
+        boolean identified=false;
+
+        ArrayList<User> registeredUsers= userRequest();
+
+        Iterator<User> it= registeredUsers.iterator();
+
+        while(it.hasNext()) {
+            User userActual = it.next();
+            if (userActual.equals(userToValidate)) {
+                identified = true;
+            }
+
+        }
+
+        return identified;
+
+
     }
 }

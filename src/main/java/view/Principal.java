@@ -1,5 +1,7 @@
 package view;
 
+import server.SocketServer;
+
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
@@ -40,38 +42,26 @@ public class Principal extends javax.swing.JFrame {
         this.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
-
             }
-
             @Override
             public void windowClosing(WindowEvent e) {
-
             }
-
             @Override
             public void windowClosed(WindowEvent e) {
                 //when disposed it calls the windowClosed event
                 setActive(false);
             }
-
             @Override
             public void windowIconified(WindowEvent e) {
-
             }
-
             @Override
             public void windowDeiconified(WindowEvent e) {
-
             }
-
             @Override
             public void windowActivated(WindowEvent e) {
-
             }
-
             @Override
             public void windowDeactivated(WindowEvent e) {
-
             }
         });
 
@@ -188,6 +178,10 @@ public class Principal extends javax.swing.JFrame {
                 new Principal(false);
             }
         });
+
+        /* Set the server to start listening */
+
+        SocketServer.serverStartsListening();
     }
 
     // Variables declaration - do not modify
@@ -202,6 +196,7 @@ public class Principal extends javax.swing.JFrame {
 
 
     //Variables declaration(different purpose that netBeans)
+
     public static boolean ACTIVE;
     private boolean identified;
 }

@@ -127,7 +127,7 @@ public class SocketServer extends Thread {
         }
     }
 
-    public static void main(String[] args) {
+    public static void serverStartsListening(){
         System.out.println("SocketServer Example");
         ServerSocket server = null;
         try {

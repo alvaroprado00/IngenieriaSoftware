@@ -47,6 +47,7 @@ public class CustomerDAO {
         }
     }
 
+    /*
     public static void main(String[] args) {
 
 
@@ -60,5 +61,5 @@ public class CustomerDAO {
 
 
     }
-
+*/
 }

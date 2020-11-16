@@ -228,19 +228,10 @@ public class UserValidationUI extends javax.swing.JFrame {
             int userID = Integer.parseInt(txtUser.getText());
             String password=String.valueOf(txtPassword.getPassword());
 
-            User user = new User(userID,password);
+            User userToValidate = new User(userID,password);
 
-            ArrayList<User> lista = Client.userRequest();
-            Iterator<User> it =lista.iterator();
+            boolean identified = Client.isUserRegistered(userToValidate);
 
-            boolean identified = false;
-            while(it.hasNext()){
-                User userActual = it.next();
-                if(userActual.equals(user)){
-                    identified = true;
-
-                }
-            }
             if(identified){
                 javax.swing.JOptionPane.showMessageDialog(this, "Bienvenido: "+txtUser.getText());
                 this.dispose();
@@ -248,17 +239,6 @@ public class UserValidationUI extends javax.swing.JFrame {
             }else{
                 javax.swing.JOptionPane.showMessageDialog(this, "El usuario NO existe");
             }
-
-            /*
-            UserController uc=new UserController();
-            identified=uc.identifyUser(userID, password);
-            if(identified){
-                javax.swing.JOptionPane.showMessageDialog(this, "Bienvenido: "+txtUser.getText());
-                this.dispose();
-                new Principal(true).setVisible(true);
-            }else{
-                javax.swing.JOptionPane.showMessageDialog(this, "El usuario NO existe");
-            }*/
 
         }catch(NumberFormatException nfe){
             nfe.printStackTrace();
