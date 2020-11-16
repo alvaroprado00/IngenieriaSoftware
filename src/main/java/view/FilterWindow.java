@@ -607,6 +607,7 @@ public class FilterWindow extends javax.swing.JFrame {
     public void cargarPaneles(ArrayList<SearchedPanel> paneles){
 
         for (SearchedPanel panel : paneles) panelResultsHolder.add(panel);
+        this.update();
     }
 
     public void cargarPalas(ArrayList<Pala> palas) throws IOException {
@@ -632,6 +633,11 @@ public class FilterWindow extends javax.swing.JFrame {
 
     public void cargarPanel(SearchedPanel panel){
         panelResultsHolder.add(panel);
+    }
+
+    private void update(){
+        this.setSize(this.getWidth()+2,this.getHeight());
+        this.setSize(this.getWidth()-2,this.getHeight());
     }
 
 
