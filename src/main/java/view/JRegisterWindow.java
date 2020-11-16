@@ -9,6 +9,7 @@ import client.Client;
 import exceptions.UserIDNotValidException;
 import model.User;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -139,6 +140,7 @@ public class JRegisterWindow extends javax.swing.JFrame {
                                 .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
         );
+
 
         pack();
         this.setTitle("Ventana de registro");

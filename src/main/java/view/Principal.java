@@ -2,6 +2,7 @@ package view;
 
 import server.SocketServer;
 
+import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
@@ -133,6 +134,8 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(pnlOverview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+
 
         pack();
         this.setIconImage(new ImagePanel("/images/icon.png", "icono de la ventana").getImageFromPanel());

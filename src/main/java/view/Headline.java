@@ -5,6 +5,7 @@ import model.Pala;
 import supportClass.Busqueda;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 
@@ -115,6 +116,16 @@ public class Headline extends javax.swing.JPanel {
                                 ioException.printStackTrace();
                             }
                         }
+                    }else{
+                        if(Busqueda.filtrarPalaNombre(new Pala(txtSearch.getText())).getNombre().equals("X")){
+                            javax.swing.JOptionPane.showMessageDialog(frame, "El nombre no coincide");
+                        }else{
+                            try {
+                                ((FilterWindow) frame).cargarPala(Busqueda.filtrarPalaNombre(new Pala(txtSearch.getText())));
+                            }catch(IOException exc){
+                                exc.printStackTrace();
+                            }
+                        }
                     }
                 }
             }
@@ -209,6 +220,7 @@ public class Headline extends javax.swing.JPanel {
                                 .addContainerGap())
                         .addComponent(pnlUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
     }// </editor-fold>
 
 
@@ -222,7 +234,7 @@ public class Headline extends javax.swing.JPanel {
     private javax.swing.JPanel pnlSearch;
     private javax.swing.JPanel pnlUser;
     private javax.swing.JTextField txtSearch;
-    private final JFrame frame;
-    private final boolean identified;
+    private  JFrame frame;
+    private boolean identified;
     // End of variables declaration
 }

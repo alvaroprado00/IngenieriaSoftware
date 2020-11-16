@@ -12,6 +12,7 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -99,6 +100,11 @@ public class JUpload extends javax.swing.JFrame {
         comboForma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Redonda", "Lagrima", "Diamante" }));
 
         sldPotencia.setPaintLabels(true);
+        sldPotencia.setBackground(Color.WHITE);
+        sldControl.setBackground(Color.WHITE);
+        sldManejabilidad.setBackground(Color.WHITE);
+        sldPuntoDulce.setBackground(Color.WHITE);
+        sldSalida.setBackground(Color.WHITE);
 
         btnSubir.setText("Examinar");
         btnSubir.addActionListener(new java.awt.event.ActionListener() {
@@ -429,6 +435,7 @@ public class JUpload extends javax.swing.JFrame {
         this.setIconImage(new ImagePanel("/images/icon.png", "icono ventana JUpload").getImageFromPanel());
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        this.setBackground(Color.WHITE);
         this.setVisible(true);
         this.active=true;
         this.setTitle("Nueva pala");

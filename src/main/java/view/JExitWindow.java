@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.*;
+
 /**
  *
  * @author Alvaro Prado

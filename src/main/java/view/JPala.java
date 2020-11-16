@@ -2,6 +2,7 @@ package view;
 import model.Pala;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.Base64;
 
 /**

@@ -5,6 +5,7 @@ import controller.UserController;
 import exceptions.UserIDNotValidException;
 import model.User;
 
+import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Iterator;
