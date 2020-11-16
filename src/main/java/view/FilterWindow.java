@@ -622,6 +622,7 @@ public class FilterWindow extends javax.swing.JFrame {
 
     public void cargarPala(Pala pala) throws IOException {
         SearchedPanel panel = new SearchedPanel(pala);
+        cargarPanel(panel);
 
     }
 

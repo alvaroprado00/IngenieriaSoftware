@@ -21,7 +21,6 @@ public class Busqueda {
                 resultado.add(palaActual);
         }
 
-        System.out.println("Resultado : " + resultado.toString());
         return resultado;
     }
 
@@ -32,10 +31,11 @@ public class Busqueda {
 
         while(it.hasNext()){
             Pala palaActual = (Pala) it.next();
-            if(palaActual.getNombre()==palaFiltroNombre.getNombre())
+            if(palaActual.getNombre().toLowerCase().contains(palaFiltroNombre.getNombre().toLowerCase()))
                 palaResultado=palaActual;
-            System.out.println("iteracion");
         }
+
+
 
         if(palaResultado!=null){
             return palaResultado;
