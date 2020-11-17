@@ -45,7 +45,7 @@ public class JRegisterWindow extends javax.swing.JFrame {
         btnRegister = new javax.swing.JButton();
         lblMessage = new javax.swing.JLabel();
 
-        pnlImage= new ImagePanel("/images/userLogo.png", "imagen para ventana de cerrar sesion");
+        pnlImage= new ImagePanel("/images/UserLogo.png", "imagen para ventana de cerrar sesion");
 
 
         javax.swing.GroupLayout pnlImageLayout = new javax.swing.GroupLayout(pnlImage);
