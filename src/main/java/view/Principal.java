@@ -1,5 +1,6 @@
 package view;
 
+import org.apache.log4j.Logger;
 import server.SocketServer;
 
 import java.awt.*;
@@ -202,5 +203,6 @@ public class Principal extends javax.swing.JFrame {
 
     public static boolean ACTIVE;
     private boolean identified;
+    private static final Logger logger = Logger.getLogger(Principal.class);
 }
 
